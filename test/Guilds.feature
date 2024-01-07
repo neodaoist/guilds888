@@ -21,7 +21,7 @@ Feature: Guilds
 
     Scenario: Deploy meltable contract to mainnet
 
-    # Token Metadata
+    # Token Metadata (videos on IPFS, JSON onchain)
 
     Scenario: Token metadata for 64 common moments
 
@@ -76,6 +76,10 @@ Feature: Guilds
     Scenario: Melt all 64 common moments into 1 ultrarare CUBE
 
     Scenario: Unmelt 1 ultrarare CUBE into 64 common moments
+
+    # Royalty Info
+
+    Scenario: Royalty info for any token
 
     # Sad Paths
 
