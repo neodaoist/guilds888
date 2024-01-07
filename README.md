@@ -1,6 +1,6 @@
 # GUILDS
 
-An 8x8x8 musical hypercube, MELTABLE into 💙 512 audio-emotional moments
+An 8x8x8 music NFT hypercube, MELTABLE into 💙 512 audio-emotional moments
 
 Composed with PAPER and PENCIL, for ICon Arts and the Sibiu Philharmonic
 
@@ -13,6 +13,10 @@ Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
 ✨ GUILDS ✨
 
 ---
+
+## The Background
+
+TODO
 
 ## The Music
 
@@ -45,10 +49,10 @@ Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
 
 ## The Experience
 
-1. [x] MINT the initial 8x8x8 CUBE on Sound.xyz
-2. [x] UNMELT the CUBE into 512 audio-emotional moments
-3. [x] MELT a couple few moment strips and mosaics
-4. [x] List the remaining moments for .000888 ETH
+1. [x] MINT the initial 8x8x8 CUBE on Sound.xyz [Sound.xyz CUBE link]
+2. [x] UNMELT the CUBE into 512 audio-emotional moments [BaseScan GUILDS contract link]
+3. [x] MELT a couple few moment strips and mosaics [Zora ClassicalMusicFan.eth profile link]
+4. [x] List the remaining moments for .000888 ETH [OpenSea GUILDS collection link]
 5. [ ] Enjoy the MUSIC and ❤️‍🔥 MELT 🫠
 
 ---
