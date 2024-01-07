@@ -4,15 +4,15 @@ pragma solidity 0.8.23;
 import {ERC721} from "solmate/tokens/ERC721.sol";
 
 contract MarketplaceNFT is ERC721 {
-    ///////// Constructor
+    //////// Constructor
 
     constructor() ERC721("MarketplaceNFT", "MPNFT") {}
 
-    ///////// Views
+    //////// Views
 
     function tokenURI(uint256 id) public view virtual override returns (string memory) {}
 
-    ///////// Actions
+    //////// Actions
 
     function mint() external {
         _mint(msg.sender, 1);

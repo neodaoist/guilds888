@@ -67,13 +67,13 @@ Feature: Guilds
 
     # [ ] Meltable Functions
 
-    Scenario: Melt all 8 common guilds of a single style into 1 uncommon STYLE moment strip
-
-    Scenario: Unmelt 1 uncommon STYLE moment strip into 8 common guilds of a single style
-
     Scenario: Melt all 8 common styles of a single guild into 1 uncommon GUILD moment strip
 
     Scenario: Unmelt 1 uncommon GUILD moment strip into 8 common styles of a single guild
+
+    Scenario: Melt all 8 common guilds of a single style into 1 uncommon STYLE moment strip
+
+    Scenario: Unmelt 1 uncommon STYLE moment strip into 8 common guilds of a single style
 
     Scenario: Melt all 64 common moments into 1 rare MOSAIC moment
 
