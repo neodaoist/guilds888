@@ -10,6 +10,11 @@ contract Guilds is ERC1155, ERC1155TokenReceiver, ERC721TokenReceiver {
     ///////// Views
 
     function uri(uint256 id) public view virtual override returns (string memory) {}
+    
+    function contractURI() public pure returns (string memory) {
+        string memory json = '{"name": "Opensea Creatures","description":"..."}';
+        return string.concat("data:application/json;utf8,", json);
+    }
 
     ///////// Actions
 

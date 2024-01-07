@@ -21,7 +21,7 @@ Feature: Guilds
 
     Scenario: Deploy meltable contract to mainnet
 
-    # Token Metadata
+    # Token Metadata (videos on IPFS, JSON onchain)
 
     Scenario: Token metadata for 64 common moments
 
