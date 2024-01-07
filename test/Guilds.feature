@@ -6,11 +6,11 @@ Feature: Guilds
 
     Actors:
     - GUILDS Deployer (Deploys GUILDS contract)
-    - Neodaoist.eth (Creates initial CUBE 1/1 on marketplace)
     - GUILDS Sales (Mints CUBE, Unmelts CUBE, Lists moments for sale, Receives GUILDS royalties)
+    - Neodaoist.eth (Creates initial CUBE 1/1 on marketplace)
     - ClassicalMusicFan.eth (Buys 8x8x3 moments, Melts 2 strips and 1 sheet)
 
-    # Initial Marketplace
+    # [x] Initial Marketplace
 
     Scenario: Mint initial 8x8x8 ultrarare CUBE
         Given there are 8 guilds
@@ -19,15 +19,15 @@ Feature: Guilds
         When I mint an ultrarare CUBE on XYZ
         Then I should have one 8x8x8 ultrarare CUBE
 
-    Scenario: Send ultrarare CUBE to meltable contract, first and only time
+    Scenario: Send ultrarare CUBE to meltable contract, first time and only time
 
-    # Deploy
+    # [ ] Deploy
 
     Scenario: Deploy meltable contract to testnet
 
     Scenario: Deploy meltable contract to mainnet
 
-    # Token Metadata (videos on IPFS, JSON onchain)
+    # [ ] Token Metadata (images and animations on IPFS, JSON onchain)
 
     Scenario: Token metadata for 64 common moments
 
@@ -39,11 +39,11 @@ Feature: Guilds
 
     Scenario: Token metadata for 1 ultrarare CUBE
 
-    # Contract Metadata
+    # [ ] Collection Metadata
 
-    Scenario: Contract metadata and Collection page
+    Scenario: Collection metadata
 
-    # Transfer
+    # [ ] Transfer
 
     Scenario: Transfer and Balance checks for 64 common moments
 
@@ -55,7 +55,7 @@ Feature: Guilds
 
     Scenario: Transfer and Balance checks for 1 ultrarare CUBE
 
-    # Approvals
+    # [ ] Approvals
 
     Scenario: Alice approves Bob for specific token ID
 
@@ -65,7 +65,7 @@ Feature: Guilds
 
     Scenario: Alice revokes Bob's approval for all token IDs
 
-    # Meltable Functions
+    # [ ] Meltable Functions
 
     Scenario: Melt all 8 common guilds of a single style into 1 uncommon STYLE moment strip
 
@@ -83,11 +83,11 @@ Feature: Guilds
 
     Scenario: Unmelt 1 ultrarare CUBE into 64 common moments
 
-    # Royalty Info
+    # [ ] Royalty Info
 
     Scenario: Royalty info for any token
 
-    # Sad Paths
+    # [ ] Sad Paths
 
     @Revert
     Scenario Outline: Insufficient balances
