@@ -17,6 +17,10 @@ contract GuildsTest is Test {
     uint8 private constant CUBE_ID = 0;
 
     uint8 private constant RANDOM_MOMENT = 8;
+    uint8 private constant RANDOM_OFFSET = 3;
+
+    uint8 private constant GUILD_ID_BLACKSMITHS = 2;
+    uint8 private constant STYLE_ID_SISTINE_CHAPEL = 2;
 
     address private constant GUILDS_DEPLOYER = address(0xA1);
     address private constant GUILDS_SALES = address(0xA2);
@@ -67,41 +71,224 @@ contract GuildsTest is Test {
     // Melt all 8 common styles of a single guild into 1 uncommon GUILD moment strip
 
     function test_meltGuildStrip() public {
-        revert("not yet impl");
+        // Do this for BLACKSMITHS, Guild #2
+        // Given
+        vm.startPrank(GUILDS_SALES);
+        for (uint256 i = 0; i < EDGE_LENGTH; i++) {
+            guilds.safeTransferFrom(GUILDS_SALES, FAN_ETH, (i * EDGE_LENGTH) + GUILD_ID_BLACKSMITHS, 1, "");
+        }
+        vm.stopPrank();
+
+        for (uint256 i = 0; i < EDGE_LENGTH; i++) {
+            assertEq(guilds.balanceOf(GUILDS_SALES, (i * EDGE_LENGTH) + GUILD_ID_BLACKSMITHS), EDGE_LENGTH - 1);
+            assertEq(guilds.balanceOf(FAN_ETH, (i * EDGE_LENGTH) + GUILD_ID_BLACKSMITHS), 1);
+        }
+        assertEq(guilds.balanceOf(FAN_ETH, NUM_COMMONS + GUILD_ID_BLACKSMITHS), 0);
+
+        // When
+        vm.prank(FAN_ETH);
+        guilds.meltGuildStrip(GUILD_ID_BLACKSMITHS);
+
+        // Then
+        for (uint256 i = 0; i < EDGE_LENGTH; i++) {
+            assertEq(guilds.balanceOf(FAN_ETH, (i * EDGE_LENGTH) + GUILD_ID_BLACKSMITHS), 0);
+        }
+        assertEq(guilds.balanceOf(FAN_ETH, NUM_COMMONS + GUILD_ID_BLACKSMITHS), 1);
+    }
+
+    function test_meltGuildStrip_many() public {
+        // Do this for all 8 guilds
+        for (uint8 guildId = 1; guildId <= EDGE_LENGTH; guildId++) {
+            // Given
+            vm.startPrank(GUILDS_SALES);
+            for (uint256 i = 0; i < EDGE_LENGTH; i++) {
+                guilds.safeTransferFrom(GUILDS_SALES, FAN_ETH, (i * EDGE_LENGTH) + guildId, 1, "");
+            }
+            vm.stopPrank();
+
+            for (uint256 i = 0; i < EDGE_LENGTH; i++) {
+                assertEq(guilds.balanceOf(GUILDS_SALES, (i * EDGE_LENGTH) + guildId), EDGE_LENGTH - 1);
+                assertEq(guilds.balanceOf(FAN_ETH, (i * EDGE_LENGTH) + guildId), 1);
+            }
+            assertEq(guilds.balanceOf(FAN_ETH, NUM_COMMONS + guildId), 0);
+
+            // When
+            vm.prank(FAN_ETH);
+            guilds.meltGuildStrip(guildId);
+
+            // Then
+            for (uint256 i = 0; i < EDGE_LENGTH; i++) {
+                assertEq(guilds.balanceOf(FAN_ETH, (i * EDGE_LENGTH) + guildId), 0);
+            }
+            assertEq(guilds.balanceOf(FAN_ETH, NUM_COMMONS + guildId), 1);
+        }
     }
 
     function testRevert_meltGuildStrip_missingStyle() public {
-        revert("not yet impl");
+        // Given
+        vm.startPrank(GUILDS_SALES);
+        for (uint256 i = 0; i < EDGE_LENGTH; i++) {
+            guilds.safeTransferFrom(GUILDS_SALES, FAN_ETH, (i * EDGE_LENGTH) + GUILD_ID_BLACKSMITHS, 1, "");
+        }
+        vm.stopPrank();
+
+        vm.prank(FAN_ETH);
+        guilds.safeTransferFrom(FAN_ETH, GUILDS_SALES, (RANDOM_OFFSET * EDGE_LENGTH) + GUILD_ID_BLACKSMITHS, 1, "");
+
+        // Then
+        vm.expectRevert(stdError.arithmeticError);
+
+        // When
+        vm.prank(FAN_ETH);
+        guilds.meltGuildStrip(GUILD_ID_BLACKSMITHS);
     }
 
     // Unmelt 1 uncommon GUILD moment strip into 8 common styles of a single guild
 
     function test_unmeltGuildStrip() public {
-        revert("not yet impl");
+        // Given
+        vm.startPrank(GUILDS_SALES);
+        for (uint256 i = 0; i < EDGE_LENGTH; i++) {
+            guilds.safeTransferFrom(GUILDS_SALES, FAN_ETH, (i * EDGE_LENGTH) + GUILD_ID_BLACKSMITHS, 1, "");
+        }
+        vm.stopPrank();
+
+        vm.prank(FAN_ETH);
+        guilds.meltGuildStrip(GUILD_ID_BLACKSMITHS);
+
+        for (uint256 i = 0; i < EDGE_LENGTH; i++) {
+            assertEq(guilds.balanceOf(FAN_ETH, (i * EDGE_LENGTH) + GUILD_ID_BLACKSMITHS), 0);
+        }
+        assertEq(guilds.balanceOf(FAN_ETH, NUM_COMMONS + GUILD_ID_BLACKSMITHS), 1);
+
+        // When
+        vm.prank(FAN_ETH);
+        guilds.unmeltGuildStrip(GUILD_ID_BLACKSMITHS);
+
+        // Then
+        for (uint256 i = 0; i < EDGE_LENGTH; i++) {
+            assertEq(guilds.balanceOf(FAN_ETH, (i * EDGE_LENGTH) + GUILD_ID_BLACKSMITHS), 1);
+        }
+        assertEq(guilds.balanceOf(FAN_ETH, NUM_COMMONS + GUILD_ID_BLACKSMITHS), 0);
     }
 
     function testRevert_unmeltGuildStrip_missingGuildStrip() public {
-        revert("not yet impl");
+        // Then
+        vm.expectRevert(stdError.arithmeticError);
+
+        // When
+        vm.prank(FAN_ETH);
+        guilds.unmeltGuildStrip(GUILD_ID_BLACKSMITHS);
     }
 
     // Melt all 8 common guilds of a single style into 1 uncommon STYLE moment strip
 
     function test_meltStyleStrip() public {
-        revert("not yet impl");
+        // Do this for SISTINE CHAPEL, Style #2
+        // Given
+        vm.startPrank(GUILDS_SALES);
+        for (uint256 i = 1; i <= EDGE_LENGTH; i++) {
+            guilds.safeTransferFrom(GUILDS_SALES, FAN_ETH, ((STYLE_ID_SISTINE_CHAPEL - 1) * EDGE_LENGTH) + i, 1, "");
+        }
+        vm.stopPrank();
+
+        for (uint256 i = 1; i <= EDGE_LENGTH; i++) {
+            assertEq(guilds.balanceOf(GUILDS_SALES, ((STYLE_ID_SISTINE_CHAPEL - 1) * EDGE_LENGTH) + i), EDGE_LENGTH - 1);
+            assertEq(guilds.balanceOf(FAN_ETH, ((STYLE_ID_SISTINE_CHAPEL - 1) * EDGE_LENGTH) + i), 1);
+        }
+        assertEq(guilds.balanceOf(FAN_ETH, NUM_COMMONS + EDGE_LENGTH + STYLE_ID_SISTINE_CHAPEL), 0);
+
+        // When
+        vm.prank(FAN_ETH);
+        guilds.meltStyleStrip(STYLE_ID_SISTINE_CHAPEL);
+
+        // Then
+        for (uint256 i = 1; i <= EDGE_LENGTH; i++) {
+            assertEq(guilds.balanceOf(FAN_ETH, ((STYLE_ID_SISTINE_CHAPEL - 1) * EDGE_LENGTH) + i), 0);
+        }
+        assertEq(guilds.balanceOf(FAN_ETH, NUM_COMMONS + EDGE_LENGTH + STYLE_ID_SISTINE_CHAPEL), 1);
+    }
+
+    function test_meltStyleStrip_many() public {
+        // Do this for all 8 styles
+        for (uint8 styleId = 1; styleId <= EDGE_LENGTH; styleId++) {
+            // Given
+            vm.startPrank(GUILDS_SALES);
+            for (uint256 i = 1; i <= EDGE_LENGTH; i++) {
+                guilds.safeTransferFrom(GUILDS_SALES, FAN_ETH, ((styleId - 1) * EDGE_LENGTH) + i, 1, "");
+            }
+            vm.stopPrank();
+
+            for (uint256 i = 1; i <= EDGE_LENGTH; i++) {
+                assertEq(guilds.balanceOf(GUILDS_SALES, ((styleId - 1) * EDGE_LENGTH) + i), EDGE_LENGTH - 1);
+                assertEq(guilds.balanceOf(FAN_ETH, ((styleId - 1) * EDGE_LENGTH) + i), 1);
+            }
+            assertEq(guilds.balanceOf(FAN_ETH, NUM_COMMONS + EDGE_LENGTH + styleId), 0);
+
+            // When
+            vm.prank(FAN_ETH);
+            guilds.meltStyleStrip(styleId);
+
+            // Then
+            for (uint256 i = 1; i <= EDGE_LENGTH; i++) {
+                assertEq(guilds.balanceOf(FAN_ETH, ((styleId - 1) * EDGE_LENGTH) + i), 0);
+            }
+            assertEq(guilds.balanceOf(FAN_ETH, NUM_COMMONS + EDGE_LENGTH + styleId), 1);
+        }
     }
 
     function testRevert_meltStyleStrip_missingGuild() public {
-        revert("not yet impl");
+        // Given
+        vm.startPrank(GUILDS_SALES);
+        for (uint256 i = 1; i <= EDGE_LENGTH; i++) {
+            guilds.safeTransferFrom(GUILDS_SALES, FAN_ETH, ((STYLE_ID_SISTINE_CHAPEL - 1) * EDGE_LENGTH) + i, 1, "");
+        }
+        vm.stopPrank();
+
+        vm.prank(FAN_ETH);
+        guilds.safeTransferFrom(
+            FAN_ETH, GUILDS_SALES, ((STYLE_ID_SISTINE_CHAPEL - 1) * EDGE_LENGTH) + RANDOM_OFFSET, 1, ""
+        );
+
+        // Then
+        vm.expectRevert(stdError.arithmeticError);
+
+        // When
+        vm.prank(FAN_ETH);
+        guilds.meltStyleStrip(STYLE_ID_SISTINE_CHAPEL);
     }
 
     // Unmelt 1 uncommon STYLE moment strip into 8 common guilds of a single style
 
     function test_unmeltStyleStrip() public {
-        revert("not yet impl");
+        // Given
+        vm.startPrank(GUILDS_SALES);
+        for (uint256 i = 1; i <= EDGE_LENGTH; i++) {
+            guilds.safeTransferFrom(GUILDS_SALES, FAN_ETH, ((STYLE_ID_SISTINE_CHAPEL - 1) * EDGE_LENGTH) + i, 1, "");
+        }
+        vm.stopPrank();
+
+        vm.prank(FAN_ETH);
+        guilds.meltStyleStrip(STYLE_ID_SISTINE_CHAPEL);
+
+        // When
+        vm.prank(FAN_ETH);
+        guilds.unmeltStyleStrip(STYLE_ID_SISTINE_CHAPEL);
+
+        // Then
+        for (uint256 i = 1; i <= EDGE_LENGTH; i++) {
+            assertEq(guilds.balanceOf(FAN_ETH, ((STYLE_ID_SISTINE_CHAPEL - 1) * EDGE_LENGTH) + i), 1);
+        }
+        assertEq(guilds.balanceOf(FAN_ETH, NUM_COMMONS + EDGE_LENGTH + STYLE_ID_SISTINE_CHAPEL), 0);
     }
 
     function testRevert_unmeltStyleStrip_missingStyleStrip() public {
-        revert("not yet impl");
+        // Then
+        vm.expectRevert(stdError.arithmeticError);
+
+        // When
+        vm.prank(FAN_ETH);
+        guilds.unmeltStyleStrip(STYLE_ID_SISTINE_CHAPEL);
     }
 
     // Melt all 64 common moments into 1 rare MOSAIC moment sheet
@@ -116,8 +303,6 @@ contract GuildsTest is Test {
 
         for (uint256 i = 1; i <= NUM_COMMONS; i++) {
             assertEq(guilds.balanceOf(GUILDS_SALES, i), EDGE_LENGTH - 1);
-        }
-        for (uint256 i = 1; i <= NUM_COMMONS; i++) {
             assertEq(guilds.balanceOf(FAN_ETH, i), 1);
         }
         assertEq(guilds.balanceOf(GUILDS_SALES, MOSAIC_ID), 0);
@@ -180,7 +365,14 @@ contract GuildsTest is Test {
         assertEq(guilds.balanceOf(FAN_ETH, MOSAIC_ID), 0);
     }
 
-    function testRevert_unmeltMosaicSheet_missingMosaic() public {}
+    function testRevert_unmeltMosaicSheet_missingMosaic() public {
+        // Then
+        vm.expectRevert(stdError.arithmeticError);
+
+        // When
+        vm.prank(FAN_ETH);
+        guilds.unmeltMosaicSheet();
+    }
 
     // Melt all 64 common moments into 1 ultrarare CUBE
 
@@ -239,12 +431,6 @@ contract GuildsTest is Test {
     }
 
     function testRevert_unmeltCube_missingCube() public {
-        // Given
-        vm.prank(GUILDS_SALES);
-        guilds.meltCube();
-        vm.prank(GUILDS_SALES);
-        guilds.safeTransferFrom(GUILDS_SALES, FAN_ETH, CUBE_ID, 1, "");
-
         // Then
         vm.expectRevert(stdError.arithmeticError);
 

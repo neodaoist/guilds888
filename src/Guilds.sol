@@ -4,6 +4,23 @@ pragma solidity 0.8.23;
 import {ERC721TokenReceiver} from "solmate/tokens/ERC721.sol";
 import {ERC1155, ERC1155TokenReceiver} from "solmate/tokens/ERC1155.sol";
 
+/////////////////////////////////////////////////////////////////////////////////////////////////
+//   ____________________                                                                      //
+//  /                    \                                                                     //
+//  !                    !                                                                     //
+//  \____________________/                                                                     //
+//           !  !                                                                              //
+//           L_ !      .oooooo.    ooooo     ooo ooooo ooooo        oooooooooo.    .oooooo..o  //
+//          / _)!     d8P'  `Y8b   `888'     `8' `888' `888'        `888'   `Y8b  d8P'    `Y8  //
+//         / /__L    888            888       8   888   888          888      888 Y88bo.       //
+//   _____/ (____)   888            888       8   888   888          888      888  `"Y8888o.   //
+//          (____)   888     ooooo  888       8   888   888          888      888      `"Y88b  //
+//   _____  (____)   `88.    .88'   `88.    .8'   888   888       o  888     d88' oo     .d8P  //
+//        \_(____)     `Y8bood8P'      `YbodP'    o888o o888ooooood8 o888bood8P'   8""88888P'  //
+//           !  !                                                                              //
+//           \__/                                                                              //
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
 contract Guilds is ERC1155, ERC1155TokenReceiver, ERC721TokenReceiver {
     ////////
 
@@ -140,19 +157,71 @@ contract Guilds is ERC1155, ERC1155TokenReceiver, ERC721TokenReceiver {
 
     // Melt all 8 common styles of a single guild into 1 uncommon GUILD moment strip
 
-    function meltGuildStrip(uint8 guildId) external {}
+    function meltGuildStrip(uint8 guildId) external {
+        //////// Effects
+        // Burn all 8 styles of this 1 guild
+        uint256[] memory ids = new uint256[](EDGE_LENGTH);
+        uint256[] memory amounts = new uint256[](EDGE_LENGTH);
+        for (uint256 i = 0; i < EDGE_LENGTH; i++) {
+            ids[i] = (i * EDGE_LENGTH) + guildId;
+            amounts[i] = 1;
+        }
+        _batchBurn(msg.sender, ids, amounts);
+
+        // Mint 1 uncommon GUILD moment strip
+        _mint(msg.sender, NUM_COMMONS + guildId, 1, "");
+    }
 
     // Unmelt 1 uncommon GUILD moment strip into 8 common styles of a single guild
 
-    function unmeltGuildStrip(uint8 guildId) external {}
+    function unmeltGuildStrip(uint8 guildId) external {
+        //////// Effects
+        // Burn 1 uncommon GUILD moment strip
+        _burn(msg.sender, NUM_COMMONS + guildId, 1);
+
+        // Mint all 8 styles of this 1 guild
+        uint256[] memory ids = new uint256[](EDGE_LENGTH);
+        uint256[] memory amounts = new uint256[](EDGE_LENGTH);
+        for (uint256 i = 0; i < EDGE_LENGTH; i++) {
+            ids[i] = (i * EDGE_LENGTH) + guildId;
+            amounts[i] = 1;
+        }
+        _batchMint(msg.sender, ids, amounts, "");
+    }
 
     // Melt all 8 common guilds of a single style into 1 uncommon STYLE moment strip
 
-    function meltStyleStrip(uint8 styleId) external {}
+    function meltStyleStrip(uint8 styleId) external {
+        //////// Effects
+        // Burn all 8 guilds of this 1 style
+        uint256[] memory ids = new uint256[](EDGE_LENGTH);
+        uint256[] memory amounts = new uint256[](EDGE_LENGTH);
+        for (uint256 i = 0; i < EDGE_LENGTH; i++) {
+            ids[i] = ((styleId - 1) * EDGE_LENGTH) + i + 1;
+            amounts[i] = 1;
+        }
+        _batchBurn(msg.sender, ids, amounts);
+
+        // Mint 1 uncommon STYLE moment strip
+        _mint(msg.sender, NUM_COMMONS + EDGE_LENGTH + styleId, 1, "");
+    }
 
     // Unmelt 1 uncommon STYLE moment strip into 8 common guilds of a single style
 
-    function unmeltStyleStrip(uint8 styleId) external {}
+    function unmeltStyleStrip(uint8 styleId) external {
+        //////// Effects
+        // Burn 1 uncommon STYLE moment strip
+        _burn(msg.sender, NUM_COMMONS + EDGE_LENGTH + styleId, 1);
+
+        // Mint all 8 guilds of this 1 style
+        uint256[] memory ids = new uint256[](EDGE_LENGTH);
+        uint256[] memory amounts = new uint256[](EDGE_LENGTH);
+        for (uint256 i = 0; i < EDGE_LENGTH; i++) {
+            ids[i] = ((styleId - 1) * EDGE_LENGTH) + i + 1;
+            amounts[i] = 1;
+        }
+        _batchMint(msg.sender, ids, amounts, "");
+    }
 
     // Melt all 64 common moments into 1 rare MOSAIC moment sheet
 
