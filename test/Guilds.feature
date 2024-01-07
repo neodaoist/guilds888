@@ -77,6 +77,10 @@ Feature: Guilds
 
     Scenario: Unmelt 1 ultrarare CUBE into 64 common moments
 
+    # Royalty Info
+
+    Scenario: Royalty info for any token
+
     # Sad Paths
 
     @Revert
