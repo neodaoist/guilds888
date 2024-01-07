@@ -17,7 +17,7 @@ Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
 ## The Music
 
 - There are 8 GUILDS, each represented musically, eg Blacksmiths, Candlemakers, Glassblowers, etc.
-- The total piece is 8 movements, ~12 min long — for flute, bassoon, violin, viola, and mixed percussion
+- The total piece is 8 movements, ~12 min long, for flute, bassoon, violin, viola, and mixed percussion
 
 [bts paper and pencil score scanned]
 [bts rehearsal]
@@ -39,13 +39,13 @@ Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
 - An address that owns all 8 common GUILD moments of a Style can MELT into 1 uncommon GUILD moment strip
 - An address that owns all 64 audio-emotional moments can MELT into 1 rare MOSAIC moment sheet
 - An address that owns all 512 audio-emotional moments can MELT into the 1/1 ultrarare CUBE
-- MELTABLE mechanic is bidirectional — singles can be MELTED into composite, composite can be UNMELTED into singles
+- MELTABLE mechanism is bidirectional — singles can be MELTED into composite, composite can be UNMELTED into singles
 
 [snapshot of contract]
 
 ## The Experience
 
-1. [x] MINT the 8x8x8 CUBE on Sound.xyz
+1. [x] MINT the initial 8x8x8 CUBE on Sound.xyz
 2. [x] UNMELT the CUBE into 512 audio-emotional moments
 3. [x] MELT a couple few moment strips and mosaics
 4. [x] List the remaining moments for .000888 ETH
