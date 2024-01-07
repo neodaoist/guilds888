@@ -1,66 +1,55 @@
-## Foundry
+## GUILDS
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+An 8x8x8 musical hypercube, MELTABLE into 512 audio-emotional moments
+Composed with PAPER and PENCIL, for ICon Arts and the Sibiu Philharmonic Orchestra
 
-Foundry consists of:
+Inspired by eight Medieval craft GUILDS of Transilvania
+For CHAMBER QUINTET - flute, bassoon, viola, violin, percussion
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
 
-## Documentation
+✨ GUILDS ✨
 
-https://book.getfoundry.sh/
+## The Music
 
-## Usage
+- The total piece is 8 movements, 12 minutes long, for flute, bassoon, violin, viola, and mixed percussion.
+- There are 8 GUILDS, represented musically, eg Blacksmiths, Candlemakers, Cobblers, etc.
 
-### Build
+[bts paper and pencil score scanned]
+[bts rehearsal]
+[concert footage]
 
-```shell
-$ forge build
-```
+## The Art
 
-### Test
+- There are 8 art STYLES, eg Starry Night, Anime, Cave Art, etc.
+- There are 64 unique audio-emotional moments, each an edition of 8, for a total of 512 moments (8x8x8)
 
-```shell
-$ forge test
-```
+[the rotating cube]
+[a rotating strip]
+[a single moment]
 
-### Format
+## The Code
 
-```shell
-$ forge fmt
-```
+- An address that owns all 8 common STYLE moments of a Guild can MELT into 1 uncommon STYLE moment strip
+- An address that owns all 8 common GUILD moments of a Style can MELT into 1 uncommon GUILD moment strip
+- An address that owns all 64 audio-emotional moments can MELT into 1 rare MOSAIC moment
+- An address that owns all 512 audio-emotional moments can MELTmelt into the 1/1 ultrarare CUBE
+- MELTable mechanic is bidirectional — singles can be MELTed into composite, composite can be UNMELTed into singles
 
-### Gas Snapshots
+[snapshot of contract]
 
-```shell
-$ forge snapshot
-```
+## The Experience (what is happening)
 
-### Anvil
+1. [x] MINT the 8x8x8 CUBE on Sound.xyz
+2. [x] UNMELT the CUBE into 512 audio-emotional moments
+3. [x] MELT couple few moment strips and mosaics
+4. [x] List the remaining moments for 0.000888 ETH
+5. [ ] Enjoy the MUSIC and ❤️‍🔥 MELT 🫠
 
-```shell
-$ anvil
-```
+---
 
-### Deploy
+GUILDS
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+MIT License 2024
+a Loudverse production
+classical music for the 22nd century
