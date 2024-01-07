@@ -14,6 +14,14 @@ Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
 
 ---
 
+1. The Background
+2. The Music
+3. The Art
+4. The Code
+5. The Experience
+
+---
+
 ## The Background
 
 TODO
@@ -23,8 +31,9 @@ TODO
 - There are 8 GUILDS, each represented musically, eg Blacksmiths, Candlemakers, Glassblowers, etc.
 - The total piece is 8 movements, ~12 min long, for flute, bassoon, violin, viola, and mixed percussion
 
-[bts paper and pencil score scanned]
-[bts rehearsal]
+[bts paper and pencil score scanned photo]
+[bts rehearsal photo]
+[blacksmiths sample video]
 [concert footage]
 
 ## The Art
@@ -33,9 +42,9 @@ TODO
 - There are 64 audio-emotional moments (8 guilds x 8 styles)
 - Each an edition of 8, for a total of 512 moments (8x8x8)
 
-[the rotating cube]
-[a rotating strip]
-[a single moment]
+[the rotating cube silent video]
+[a rotating strip silent video]
+[a single moment silent video]
 
 ## The Code
 
@@ -45,7 +54,7 @@ TODO
 - An address that owns all 512 audio-emotional moments can MELT into the 1/1 ultrarare CUBE
 - MELTABLE mechanism is bidirectional — singles can be MELTED into composite, composite can be UNMELTED into singles
 
-[snapshot of contract]
+[contract screenshot photo]
 
 ## The Experience
 
