@@ -1,8 +1,14 @@
 Feature: Guilds
 
-    A hypercube of audio-emotional moments
-    Inspired by the Medieval craft guilds of Transylvania
-    For chamber quintet - flute, bassoon, viola, violin, and percussion
+    An 8x8x8 hypercube of audio-emotional moments
+    Inspired by the Medieval craft guilds of Transilvania
+    For chamber quintet - flute, bassoon, viola, violin, percussion
+
+    Actors:
+    - GUILDS Deployer (Deploys GUILDS contract)
+    - Neodaoist.eth (Creates initial CUBE 1/1 on marketplace)
+    - GUILDS Sales (Mints CUBE, Unmelts CUBE, Lists moments for sale, Receives GUILDS royalties)
+    - ClassicalMusicFan.eth (Buys 8x8x3 moments, Melts 2 strips and 1 sheet)
 
     # Initial Marketplace
 
