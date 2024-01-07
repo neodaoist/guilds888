@@ -65,7 +65,7 @@ Feature: Guilds
 
     Scenario: Alice revokes Bob's approval for all token IDs
 
-    # [ ] Meltable Functions
+    # [x] Meltable Functions
 
     Scenario: Melt all 8 common styles of a single guild into 1 uncommon GUILD moment strip
 
