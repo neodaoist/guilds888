@@ -99,7 +99,7 @@ Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
 
 ## The Experience
 
-1. [x] Deploy initial contract and MINT the initial 8x8x8 CUBE with [Manifold](https://gallery.manifold.xyz/base/0x4db3ab8e606eadf3d94cf5349a35c415156b89b3/1)
+1. [x] Deploy the contract and MINT the 8x8x8 CUBE with [Manifold](https://gallery.manifold.xyz/base/0x4db3ab8e606eadf3d94cf5349a35c415156b89b3/1)
 2. [x] UNMELT the CUBE into [512 audio-emotional moments](https://basescan.org/tx/0x01a9df31ac13b0317af88fb403ea94940b0d2d2f951dca3d65633c781c5a37c1)
 3. [x] MELT a few moment strips and mosaics ([scroll to bottom to see rares =)](https://zora.co/0x4ab68ce2dd8dbdd17f925b5ab49e6f7ad433013b))
 4. [x] List the remaining moments [for sale for .000888 ETH!](https://opensea.io/collection/guilds888)
