@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.23;
+pragma solidity 0.8.19;
 
 import {Test, console2, stdError} from "forge-std/Test.sol";
 import {MarketplaceNFT} from "./MarketplaceNFT.sol";

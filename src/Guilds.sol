@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.23;
+pragma solidity 0.8.19;
 
 import {Base64} from "./Base64.sol";
 import {ERC1155} from "solmate/tokens/ERC1155.sol";
