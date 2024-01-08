@@ -1,5 +1,7 @@
 # GUILDS
 
+![header](./media/HEADER.jpg)
+
 An 8x8x8 musical hypercube, MELTABLE into 💙 512 audio-emotional moments
 
 Composed with PAPER and PENCIL, for ICon Arts and the Sibiu Philharmonic
@@ -76,7 +78,9 @@ Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
 
 - The [initial CUBE contract](https://basescan.org/address/0x4db3ab8e606eadf3d94cf5349a35c415156b89b3?a=1#code) is an ERC721 NFT, created with Manifold Studio
 - The [meltable GUILDS contract](https://basescan.org/address/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92#code) is an ERC1155, written with Foundry and Solmate
-- MELTABLE mechanism is bidirectional — singles can be MELTED into compounds, compounds can be UNMELTED into singles
+- MELTABLE mechanism is bidirectional —
+  - Singles can be MELTED into compounds
+  - Compounds can be UNMELTED into singles
 - Code by Neodaoist
 
 <div style="text-align: center;">
