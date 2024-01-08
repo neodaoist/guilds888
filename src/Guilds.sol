@@ -53,6 +53,7 @@ contract Guilds is ERC1155, ERC721TokenReceiver {
         "CANDLEMAKERS",
         "ARROWFLETCHERS"
     ];
+    
     string[] private STYLES = [
         "CAVEDRAWING",
         "SISTINECHAPEL",

@@ -55,10 +55,10 @@ Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
 - There are 64 audio-emotional moments (8 guilds x 8 styles)
 - Each an edition of 8, for a total of 512 moments (8x8x8)
 - How can collectors MELT their common moment NFTs into rarer NFTs?
-  - A collector with all 8 STYLE moments of a Guild, can MELT into 1 uncommon 8x1 STYLE moment strip
-  - A collector with all 8 GUILD moments of a Style, can MELT into 1 uncommon 1x8 GUILD moment strip
-  - A collector with all 64 audio-emotional moments, can MELT into 1 rare 8x8 MOSAIC moment sheet
-  - A collector with all 512 audio-emotional moments, can MELT into the 1/1 ultrarare 8x8x8 CUBE
+  - A collector with all 8 STYLE moments of a Guild, can MELT into 1 [uncommon 8x1 STYLE moment strip](https://zora.co/collect/base:0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/73)
+  - A collector with all 8 GUILD moments of a Style, can MELT into 1 [uncommon 1x8 GUILD moment strip](https://zora.co/collect/base:0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/66)
+  - A collector with all 64 audio-emotional moments, can MELT into 1 [rare 8x8 MOSAIC moment sheet](https://zora.co/collect/base:0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/81)
+  - A collector with all 512 audio-emotional moments, can MELT into the [1/1 ultrarare 8x8x8 CUBE](https://gallery.manifold.xyz/base/0x4db3ab8e606eadf3d94cf5349a35c415156b89b3/1)
 
 ![cube gif](./media/CUBE.gif)
 ![blank spacer](./media/SPACER.png)
@@ -89,9 +89,9 @@ Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
 ## The Experience
 
 1. [x] MINT the initial 8x8x8 CUBE on [Manifold](https://gallery.manifold.xyz/base/0x4db3ab8e606eadf3d94cf5349a35c415156b89b3/1)
-2. [x] UNMELT the CUBE into 512 audio-emotional moments [BaseScan GUILDS tx link]
-3. [x] MELT a few moment strips and mosaics [Zora ClassicalMusicFan.eth profile link]
-4. [x] List the remaining moments for .000888 ETH [OpenSea GUILDS collection link]
+2. [x] UNMELT the CUBE into [512 audio-emotional moments](https://basescan.org/tx/0x01a9df31ac13b0317af88fb403ea94940b0d2d2f951dca3d65633c781c5a37c1)
+3. [x] MELT a few moment strips and mosaics ([scroll to bottom to see rares =)](https://zora.co/0x4ab68ce2dd8dbdd17f925b5ab49e6f7ad433013b))
+4. [x] List the remaining moments [for sale for .000888 ETH!](https://opensea.io/collection/guilds888)
 5. [ ] Enjoy the MUSIC and ❤️‍🔥 MELT 🫠
 
 ## What's Next?
