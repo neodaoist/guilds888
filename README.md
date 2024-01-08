@@ -26,13 +26,16 @@ Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
 
 # The Background
 
-- TODO
+- Sibiu, Romania was founded by Saxon settlers during the mid-late 12th century
+- In the 14th century, it was already an important trade centre, with craftspeople divided in various guilds
+- This piece is inspired by this rich history, employing a rich musical language to evoke the essence of each guild
 
 # The Music
 
 - There are 8 GUILDS, each represented musically, from Blacksmiths to Candlemakers, Glassblowers, and more
 - The total piece is 8 movements, ~12 min long, for flute, bassoon, violin, viola, and mixed percussion
-- For full score and/or parts, contact @neodaoist
+- For full score and/or parts, contact [@neodaoist](https://twitter.com/neodaoist)
+- Music by Neodaoist
 
 ### Paper and Pencil Draft
 ![paper and pencil score](./media/PAPERSCORE.jpg)
@@ -55,10 +58,11 @@ Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
 - There are 64 audio-emotional moments (8 guilds x 8 styles)
 - Each an edition of 8, for a total of 512 moments (8x8x8)
 - How can collectors MELT their common moment NFTs into rarer NFTs?
-  - A collector with all 8 STYLE moments of a Guild, can MELT into 1 [uncommon 8x1 STYLE moment strip](https://zora.co/collect/base:0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/73)
-  - A collector with all 8 GUILD moments of a Style, can MELT into 1 [uncommon 1x8 GUILD moment strip](https://zora.co/collect/base:0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/66)
-  - A collector with all 64 audio-emotional moments, can MELT into 1 [rare 8x8 MOSAIC moment sheet](https://zora.co/collect/base:0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/81)
+  - A collector with all 8 STYLE moments of a Guild, can MELT into an [uncommon 8x1 STYLE moment strip](https://opensea.io/assets/base/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/73)
+  - A collector with all 8 GUILD moments of a Style, can MELT into an [uncommon 1x8 GUILD moment strip](https://opensea.io/assets/base/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/66)
+  - A collector with all 64 audio-emotional moments, can MELT into a [rare 8x8 MOSAIC moment sheet](https://opensea.io/assets/base/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/81)
   - A collector with all 512 audio-emotional moments, can MELT into the [1/1 ultrarare 8x8x8 CUBE](https://gallery.manifold.xyz/base/0x4db3ab8e606eadf3d94cf5349a35c415156b89b3/1)
+- 2D art prompted by Neodaoist; 3D art modeled by a digital collaborator
 
 ![cube gif](./media/CUBE.gif)
 ![blank spacer](./media/SPACER.png)
@@ -70,8 +74,10 @@ Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
 
 # The Code
 
-- TODO
-- MELTABLE mechanism is bidirectional — singles can be MELTED into composite, composite can be UNMELTED into singles
+- The [initial CUBE contract](https://basescan.org/address/0x4db3ab8e606eadf3d94cf5349a35c415156b89b3?a=1#code) is an ERC721 NFT, created with Manifold Studio
+- The [meltable GUILDS contract](https://basescan.org/address/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92#code) is an ERC1155, written with Foundry and Solmate
+- MELTABLE mechanism is bidirectional — singles can be MELTED into compounds, compounds can be UNMELTED into singles
+- Code by Neodaoist
 
 <div style="text-align: center;">
 
@@ -88,7 +94,7 @@ Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
 
 ## The Experience
 
-1. [x] MINT the initial 8x8x8 CUBE on [Manifold](https://gallery.manifold.xyz/base/0x4db3ab8e606eadf3d94cf5349a35c415156b89b3/1)
+1. [x] Deploy initial contract and MINT the initial 8x8x8 CUBE with [Manifold](https://gallery.manifold.xyz/base/0x4db3ab8e606eadf3d94cf5349a35c415156b89b3/1)
 2. [x] UNMELT the CUBE into [512 audio-emotional moments](https://basescan.org/tx/0x01a9df31ac13b0317af88fb403ea94940b0d2d2f951dca3d65633c781c5a37c1)
 3. [x] MELT a few moment strips and mosaics ([scroll to bottom to see rares =)](https://zora.co/0x4ab68ce2dd8dbdd17f925b5ab49e6f7ad433013b))
 4. [x] List the remaining moments [for sale for .000888 ETH!](https://opensea.io/collection/guilds888)
@@ -96,13 +102,13 @@ Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
 
 ## What's Next?
 
-- The Music — TODO
-- The Code — TODO
-- The Art — TODO
+- The Music — 🎻 Would love to re-record the expanded version in studio, again with ICon Arts Ensemble
+- The Code — ⛽️ Definitely some opportunities to gas golf and optimize the contract further
+- The Art — ⏳ Could add a time dimension, where the art unfolds and evolves over time
 
 ---
 
-GUILDS
+W💙TA
 
 Minted on the Superchain January 2024
 
