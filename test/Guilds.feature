@@ -21,7 +21,7 @@ Feature: Guilds
 
     Scenario: Send ultrarare CUBE to meltable contract, first time and only time
 
-    # [ ] Deploy
+    # [x] Deploy
 
     Scenario: Deploy meltable contract to testnet
 
@@ -31,11 +31,11 @@ Feature: Guilds
 
     Scenario: Token metadata for 64 common moments
 
-    Scenario: Token metadata for 8 uncommon STYLE moment strips
-
     Scenario: Token metadata for 8 uncommon GUILD moment strips
 
-    Scenario: Token metadata for 1 rare MOSAIC moment
+    Scenario: Token metadata for 8 uncommon STYLE moment strips
+
+    Scenario: Token metadata for 1 rare MOSAIC moment sheet
 
     Scenario: Token metadata for 1 ultrarare CUBE
 
@@ -83,32 +83,6 @@ Feature: Guilds
 
     Scenario: Unmelt 1 ultrarare CUBE into 64 common moments
 
-    # [ ] Royalty Info
+    # [x] Royalty Info
 
     Scenario: Royalty info for any token
-
-    # [ ] Sad Paths
-
-    @Revert
-    Scenario Outline: Insufficient balances
-        Given there are <guild> guilds
-        And there are <style> styles
-        When I eat <eat> cucumbers
-        Then I should have <left> cucumbers
-
-        Examples:
-            | start | eat | left |
-            | 12    | 5   | 7    |
-            | 20    | 5   | 15   |
-
-    @Revert
-    Scenario Outline: Insufficient approvals
-        Given there are <guild> guilds
-        And there are <style> styles
-        When I eat <eat> cucumbers
-        Then I should have <left> cucumbers
-
-        Examples:
-            | start | eat | left |
-            | 12    | 5   | 7    |
-            | 20    | 5   | 15   |
