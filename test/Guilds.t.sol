@@ -66,6 +66,34 @@ contract GuildsTest is Test {
         assertEq(guilds.balanceOf(GUILDS_SALES, CUBE_ID), 0);
     }
 
+    //////// View Functions
+
+    // function test_parseMoment_many() public {
+    //     (uint8 guildId, uint8 styleId) = guilds._parseMoment(1);
+    //     assertEq(guildId, 1);
+    //     assertEq(styleId, 1);
+
+    //     (guildId, styleId) = guilds._parseMoment(56);
+    //     assertEq(guildId, 8);
+    //     assertEq(styleId, 7);
+
+    //     (guildId, styleId) = guilds._parseMoment(55);
+    //     assertEq(guildId, 7);
+    //     assertEq(styleId, 7);
+
+    //     (guildId, styleId) = guilds._parseMoment(54);
+    //     assertEq(guildId, 7);
+    //     assertEq(styleId, 6);
+
+    //     (guildId, styleId) = guilds._parseMoment(53);
+    //     assertEq(guildId, 7);
+    //     assertEq(styleId, 5);
+
+    //     (guildId, styleId) = guilds._parseMoment(8);
+    //     assertEq(guildId, 1);
+    //     assertEq(styleId, 8);
+    // }
+
     //////// Meltable Functions
 
     // Melt all 8 common styles of a single guild into 1 uncommon GUILD moment strip

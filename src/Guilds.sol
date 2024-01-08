@@ -1,164 +1,208 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.23;
 
+import {Base64} from "./Base64.sol";
+import {ERC1155} from "solmate/tokens/ERC1155.sol";
 import {ERC721TokenReceiver} from "solmate/tokens/ERC721.sol";
-import {ERC1155, ERC1155TokenReceiver} from "solmate/tokens/ERC1155.sol";
 
-/////////////////////////////////////////////////////////////////////////////////////////////////
-//   ____________________                                                                      //
-//  /                    \                                                                     //
-//  !                    !                                                                     //
-//  \____________________/                                                                     //
-//           !  !                                                                              //
-//           L_ !      .oooooo.    ooooo     ooo ooooo ooooo        oooooooooo.    .oooooo..o  //
-//          / _)!     d8P'  `Y8b   `888'     `8' `888' `888'        `888'   `Y8b  d8P'    `Y8  //
-//         / /__L    888            888       8   888   888          888      888 Y88bo.       //
-//   _____/ (____)   888            888       8   888   888          888      888  `"Y8888o.   //
-//          (____)   888     ooooo  888       8   888   888          888      888      `"Y88b  //
-//   _____  (____)   `88.    .88'   `88.    .8'   888   888       o  888     d88' oo     .d8P  //
-//        \_(____)     `Y8bood8P'      `YbodP'    o888o o888ooooood8 o888bood8P'   8""88888P'  //
-//           !  !                                                                              //
-//           \__/                                                                              //
-/////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//   ____________________   .     *      *        *    .                                  *     //
+//  /                    \   *    .  *      .  *     .  *   . *    .  *      . *     .  *   .   //
+//  !                    !     ..    *    .      *  .  ..  *    ..    *    .      *  .  ..  *   //
+//  \____________________/   *    *            .      *   *   *    *     .      .      *   *    //
+//           !  !                                                *         *        .           //
+//           L_ !      .oooooo.    ooooo     ooo ooooo ooooo        oooooooooo.    .oooooo..o   //
+//          / _)!     d8P'  `Y8b   `888'     `8' `888' `888'        `888'   `Y8b  d8P'    `Y8   //
+//         / /__L    888            888       8   888   888          888      888 Y88bo.        //
+//   _____/ (____)   888            888       8   888   888          888      888  `"Y8888o.    //
+//          (____)   888     ooooo  888       8   888   888          888      888      `"Y88b   //
+//   _____  (____)   `88.    .88'   `88.    .8'   888   888       o  888     d88' oo     .d8P   //
+//        \_(____)     `Y8bood8P'      `YbodP'    o888o o888ooooood8 o888bood8P'   8""88888P'   //
+//           !  !       ____________________________________________________________________    //
+//           \__/                                                                               //
+//////////////////////////////////////////////////////////////////////////////////////////////////
 
-contract Guilds is ERC1155, ERC1155TokenReceiver, ERC721TokenReceiver {
+/// @notice Guilds
+/// @author neodaoist.eth
+/// @dev ERC1155 contract for GUILDS NFTs
+contract Guilds is ERC1155, ERC721TokenReceiver {
     ////////
-
-    enum Guild {
-        BLANK,
-        GOLDSMITHS,
-        BLACKSMITHS,
-        EMBROIDERERS,
-        STONEMASONS,
-        GLASSBLOWERS,
-        COBBLERS,
-        CANDLEMAKERS,
-        ARROWFLETCHERS
-    }
-
-    enum Style {
-        BLANK,
-        CAVE_DRAWING,
-        SISTINE_CHAPEL,
-        STARRY_NIGHT,
-        CUBISM,
-        SALVADOR_DALI,
-        PSYCHEDELIA,
-        ANIME,
-        SOLARPUNK
-    }
-
-    struct Content {
-        string title;
-        string description;
-        string image;
-        string animation_url;
-    }
-
-    ////////
-
-    address private immutable GUILDS_SALES;
-    address private immutable CUBE_CONTRACT;
-    uint256 private immutable CUBE_TOKEN;
 
     uint8 private constant EDGE_LENGTH = 8;
     uint8 private constant NUM_COMMONS = 64;
     uint8 private constant MOSAIC_ID = 81;
     uint8 private constant CUBE_ID = 0;
 
+    string private constant BASE_URI = "ipfs://bafybeihn3n4kfek26fl3fy5mlsqc64upjgx5fq5hhe3i7wsfppjthqfhq4/";
+    string private constant ENCODED_SPACE = "%20";
+
     uint16 public constant ROYALTY_PERCENTAGE_IN_BPS = 800;
+
+    address private immutable guildsSales;
+    address private immutable cubeContract;
+    uint256 private immutable cubeToken;
 
     ////////
 
-    /// @dev tokenID => Content
-    mapping(uint256 => Content) public content;
+    string[] private GUILDS = [
+        "GOLDSMITHS",
+        "BLACKSMITHS",
+        "EMBROIDERERS",
+        "STONEMASONS",
+        "GLASSBLOWERS",
+        "COBBLERS",
+        "CANDLEMAKERS",
+        "ARROWFLETCHERS"
+    ];
+    string[] private STYLES = [
+        "CAVE DRAWING",
+        "SISTINE CHAPEL",
+        "STARRY NIGHT",
+        "CUBISM",
+        "SALVADOR DALI",
+        "PSYCHEDELIA",
+        "ANIME",
+        "SOLARPUNK"
+    ];
 
     //////// Constructor
 
-    constructor(address guildsSales, address cubeContract, uint256 cubeToken) {
+    constructor(address _guildsSales, address _cubeContract, uint256 _cubeToken) {
         // Store GUILDS sales and royalty receiver
-        GUILDS_SALES = guildsSales;
+        guildsSales = _guildsSales;
 
         // Store contract and token info for ultrarare CUBE
-        CUBE_CONTRACT = cubeContract;
-        CUBE_TOKEN = cubeToken;
-
-        // Store content for common MOMENTS
-        for (uint256 i = 1; i <= 8; i++) {
-            for (uint256 j = 1; j <= 8; j++) {
-                Guild guild = Guild(i);
-                Style style = Style(j);
-
-                content[i * j] = Content({title: "", description: "", image: "", animation_url: ""});
-            }
-        }
-
-        // Store content for uncommon STRIPS
-
-        // Store content for rare SHEET
+        cubeContract = _cubeContract;
+        cubeToken = _cubeToken;
     }
 
     //////// Views
 
-    function uri(uint256 id) public view virtual override returns (string memory) {}
-
+    /// @notice Returns collection metadata
     function contractURI() public pure returns (string memory) {
-        string memory json = '{"name": "Opensea Creatures","description":"..."}';
-        return string.concat("data:application/json;utf8,", json);
+        /* solhint-disable quotes */
+        return string(
+            abi.encodePacked(
+                "data:application/json;base64,",
+                Base64.encode(
+                    bytes(
+                        string.concat(
+                            '{"name": "GUILDS", ',
+                            '"description": "An 8x8x8 musical hypercube of audio-emotional moments, inspired by the Medieval craft guilds of Transilvania. For flute, bassoon, violin, viola, percussion.", ',
+                            '"image": "XYZ", ',
+                            '"external_link": "https://github.com/neodaoist/guilds888/"}'
+                        )
+                    )
+                )
+            )
+        );
     }
 
-    // /// @notice Returns collection metadata
-    // function contractURI() public pure returns (string memory) {
-    //     /* solhint-disable quotes */
-    //     return string(
-    //         abi.encodePacked(
-    //             "data:application/json;base64,",
-    //             Utils.encode(
-    //                 bytes(
-    //                     string(
-    //                         abi.encodePacked(
-    //                             '{"name": "XYZ", ',
-    //                             '"description": "XYZ", ',
-    //                             '"image": "XYZ", ',
-    //                             '"external_link": "XYZ"}'
-    //                         )
-    //                     )
-    //                 )
-    //             )
-    //         )
-    //     );
-    // }
+    /// @notice Returns token metadata
+    function uri(uint256 tokenId) public view override returns (string memory) {
+        string memory name;
+        string memory description;
+        string memory image;
+        string memory animation_url;
+        string memory rarity;
+        string memory guild;
+        string memory style;
 
-    // /// @notice Returns token metadata
-    // function uri(uint256 tokenId) public view override returns (string memory) {
-    //     /* solhint-disable quotes */
-    //     return string(
-    //         abi.encodePacked(
-    //             "data:application/json;base64,",
-    //             Utils.encode(
-    //                 bytes(
-    //                     string(
-    //                         abi.encodePacked(
-    //                             '{"name": "XYZ", ',
-    //                             '"description": "XYZ", ',
-    //                             '"image": "XYZ", ',
-    //                             '"animation_url": "XYZ", ',
-    //                             '"external_url": "XYZ", ',
-    //                             '"background_color": "XYZ"}'
-    //                         )
-    //                     )
-    //                 )
-    //             )
-    //         )
-    //     );
-    // }
+        if (tokenId == CUBE_ID) {
+            // CUBE
+            name = "GUILDS - ULTRARARE CUBE";
+            description =
+                "This 8x8x8 CUBE is the rarest of all GUILDS NFTs (1/1). It is a 3D representation of all 8 editions of all 64 common GUILDS audio-emotional moments.\n\nTODO";
+            image = "CUBE.jpg";
+            animation_url = "CUBE%20video.mp4";
+            rarity = "ULTRARARE";
+        } else if (tokenId == MOSAIC_ID) {
+            // MOSAIC
+            name = "GUILDS - RARE MOSAIC";
+            description =
+                "This 8x8 MOSAIC is a rare GUILDS NFT (Edition of 8). It is a 2D representation of all 64 common GUILDS audio-emotional moments.\n\nTODO";
+            image = "SHEET.jpg";
+            animation_url = "SHEET%20video.mp4";
+            rarity = "RARE";
+        } else if (tokenId > NUM_COMMONS + EDGE_LENGTH) {
+            // STYLE STRIP
+            uint8 styleId = _parseStyleStrip(tokenId);
+            style = STYLES[styleId];
+
+            name = string.concat("GUILDS - UNCOMMON ", style, " STRIP");
+            description = string.concat(
+                "Ths 8x1 STRIP is an uncommon GUILDS NFT (Edition of 8 x 8 styles). It is a 1D representation of all 8 common GUILD audio-emotional moments of the STYLE.\n\nTODO"
+            );
+            image = "";
+            animation_url = "";
+            rarity = "UNCOMMON";
+        } else if (tokenId > NUM_COMMONS) {
+            // GUILD STRIP
+            uint8 guildId = _parseGuildStrip(tokenId);
+            guild = GUILDS[guildId];
+
+            name = string.concat("GUILDS - UNCOMMON ", guild, " STRIP");
+            description = string.concat(
+                "Ths 1x8 STRIP is an uncommon GUILDS NFT (Edition of 8 x 8 guilds). It is a 1D representation of all 8 common STYLE audio-emotional moments of the GUILD.\n\nTODO"
+            );
+            image = "";
+            animation_url = "";
+            rarity = "UNCOMMON";
+        } else {
+            // MOMENT
+            (uint8 guildId, uint8 styleId) = _parseMoment(tokenId);
+            guild = GUILDS[guildId];
+            style = STYLES[styleId];
+
+            name = string.concat("GUILDS - COMMON ", guild, " x ", style, " MOMENT");
+            description = string.concat(
+                "This is a common GUILDS NFT (Edition of 64). It is a single audio-emotional moment.\n\nTODO"
+            );
+            image = string.concat(guild, ENCODED_SPACE, style, ".jpg");
+            animation_url = "";
+            rarity = "COMMON";
+        }
+
+        /* solhint-disable quotes */
+        return string(
+            abi.encodePacked(
+                "data:application/json;base64,",
+                Base64.encode(
+                    bytes(
+                        string.concat(
+                            '{"name": "',
+                            name,
+                            '", "description": "',
+                            description,
+                            '", "image": "',
+                            image,
+                            '", ',
+                            '"animation_url": "',
+                            animation_url,
+                            '", "attributes": [{"trait_type": "Rarity", "value": "',
+                            rarity,
+                            '"}, {"trait_type": "Guild", "value": "',
+                            guild,
+                            '"}, {"trait_type": "Style", "value": "',
+                            style,
+                            "}]}"
+                        )
+                    )
+                )
+            )
+        );
+    }
+
+    function _parseStyleStrip(uint256 tokenId) public pure returns (uint8 styleId) {}
+
+    function _parseGuildStrip(uint256 tokenId) public pure returns (uint8 guildId) {}
+
+    function _parseMoment(uint256 tokenId) public pure returns (uint8 guildId, uint8 styleId) {}
 
     //////// Actions
 
-    // Melt all 8 common styles of a single guild into 1 uncommon GUILD moment strip
-
+    /// @notice Melt all 8 common styles of a single guild into 1 uncommon GUILD moment strip
     function meltGuildStrip(uint8 guildId) external {
-        //////// Effects
         // Burn all 8 styles of this 1 guild
         uint256[] memory ids = new uint256[](EDGE_LENGTH);
         uint256[] memory amounts = new uint256[](EDGE_LENGTH);
@@ -172,10 +216,8 @@ contract Guilds is ERC1155, ERC1155TokenReceiver, ERC721TokenReceiver {
         _mint(msg.sender, NUM_COMMONS + guildId, 1, "");
     }
 
-    // Unmelt 1 uncommon GUILD moment strip into 8 common styles of a single guild
-
+    /// @notice Unmelt 1 uncommon GUILD moment strip into 8 common styles of a single guild
     function unmeltGuildStrip(uint8 guildId) external {
-        //////// Effects
         // Burn 1 uncommon GUILD moment strip
         _burn(msg.sender, NUM_COMMONS + guildId, 1);
 
@@ -189,10 +231,8 @@ contract Guilds is ERC1155, ERC1155TokenReceiver, ERC721TokenReceiver {
         _batchMint(msg.sender, ids, amounts, "");
     }
 
-    // Melt all 8 common guilds of a single style into 1 uncommon STYLE moment strip
-
+    /// @notice Melt all 8 common guilds of a single style into 1 uncommon STYLE moment strip
     function meltStyleStrip(uint8 styleId) external {
-        //////// Effects
         // Burn all 8 guilds of this 1 style
         uint256[] memory ids = new uint256[](EDGE_LENGTH);
         uint256[] memory amounts = new uint256[](EDGE_LENGTH);
@@ -206,10 +246,8 @@ contract Guilds is ERC1155, ERC1155TokenReceiver, ERC721TokenReceiver {
         _mint(msg.sender, NUM_COMMONS + EDGE_LENGTH + styleId, 1, "");
     }
 
-    // Unmelt 1 uncommon STYLE moment strip into 8 common guilds of a single style
-
+    /// @notice Unmelt 1 uncommon STYLE moment strip into 8 common guilds of a single style
     function unmeltStyleStrip(uint8 styleId) external {
-        //////// Effects
         // Burn 1 uncommon STYLE moment strip
         _burn(msg.sender, NUM_COMMONS + EDGE_LENGTH + styleId, 1);
 
@@ -223,10 +261,8 @@ contract Guilds is ERC1155, ERC1155TokenReceiver, ERC721TokenReceiver {
         _batchMint(msg.sender, ids, amounts, "");
     }
 
-    // Melt all 64 common moments into 1 rare MOSAIC moment sheet
-
+    /// @notice Melt all 64 common moments into 1 rare MOSAIC moment sheet
     function meltMosaicSheet() external {
-        //////// Effects
         // Burn 64x1 common moments
         uint256[] memory ids = new uint256[](NUM_COMMONS);
         uint256[] memory amounts = new uint256[](NUM_COMMONS);
@@ -240,10 +276,8 @@ contract Guilds is ERC1155, ERC1155TokenReceiver, ERC721TokenReceiver {
         _mint(msg.sender, MOSAIC_ID, 1, "");
     }
 
-    // Unmelt 1 rare MOSAIC moment sheet into 64 common moments
-
+    /// @notice Unmelt 1 rare MOSAIC moment sheet into 64 common moments
     function unmeltMosaicSheet() external {
-        //////// Effects
         // Burn 1 rare MOSAIC moment sheet
         _burn(msg.sender, MOSAIC_ID, 1);
 
@@ -257,10 +291,8 @@ contract Guilds is ERC1155, ERC1155TokenReceiver, ERC721TokenReceiver {
         _batchMint(msg.sender, ids, amounts, "");
     }
 
-    // Melt all 64 common moments into 1 ultrarare CUBE
-
+    /// @notice Melt all 64 common moments into 1 ultrarare CUBE
     function meltCube() external {
-        //////// Effects
         // Burn all 64x8 common moments
         uint256[] memory ids = new uint256[](NUM_COMMONS);
         uint256[] memory amounts = new uint256[](NUM_COMMONS);
@@ -274,10 +306,8 @@ contract Guilds is ERC1155, ERC1155TokenReceiver, ERC721TokenReceiver {
         _mint(msg.sender, CUBE_ID, 1, "");
     }
 
-    // Unmelt 1 ultrarare CUBE into 64 common moments
-
+    /// @notice Unmelt 1 ultrarare CUBE into 64 common moments
     function unmeltCube() public {
-        //////// Effects
         // Mint all 64x8 common moments
         _unmeltCube(msg.sender);
 
@@ -295,55 +325,32 @@ contract Guilds is ERC1155, ERC1155TokenReceiver, ERC721TokenReceiver {
         _batchMint(recipient, ids, amounts, "");
     }
 
-    //////// ERC1155 Token Receiver
-
-    function onERC1155Received(address, address, uint256, uint256, bytes calldata)
-        external
-        virtual
-        override
-        returns (bytes4)
-    {
-        // TODO
-        return ERC1155TokenReceiver.onERC1155Received.selector;
-    }
-
-    function onERC1155BatchReceived(address, address, uint256[] calldata, uint256[] calldata, bytes calldata)
-        external
-        virtual
-        override
-        returns (bytes4)
-    {
-        // TODO
-        return ERC1155TokenReceiver.onERC1155BatchReceived.selector;
-    }
-
     //////// ERC721 Token Receiver
 
-    function onERC721Received(address, address, uint256, bytes calldata) external virtual override returns (bytes4) {
+    /// @notice Handle ERC721 token transfer
+    function onERC721Received(address, address, uint256, bytes calldata) external override returns (bytes4) {
         // Mint 64 common moments
-        _unmeltCube(GUILDS_SALES);
+        _unmeltCube(guildsSales);
 
         return ERC721TokenReceiver.onERC721Received.selector;
     }
 
     //////// ERC2981 Royalty Info
 
-    /// @notice Returns royalty info for a given token and sale price.
-    /// @return receiver The author's address.
-    /// @return royaltyAmount A fixed 8% royalty based on the sale price.
-    function royaltyInfo(uint256 tokenId, uint256 salePrice)
+    /// @notice Returns royalty info for a given token and sale price
+    function royaltyInfo(uint256, /*tokenId*/ uint256 salePrice)
         external
         view
         returns (address receiver, uint256 royaltyAmount)
-    {}
+    {
+        receiver = guildsSales;
+        royaltyAmount = (salePrice * ROYALTY_PERCENTAGE_IN_BPS) / 10_000;
+    }
 
     //////// ERC165 Supported Interfaces
 
-    /// @dev see ERC165
-    function supportsInterface(bytes4 interfaceId) public view virtual override returns (bool) {
-        return interfaceId == 0x2a55205a // ERC2981 -- royaltyInfo
-            || interfaceId == 0x01ffc9a7 // ERC165 -- supportsInterface
-            || interfaceId == 0x80ac58cd // ERC721 -- Non-Fungible Tokens
-            || interfaceId == 0x5b5e139f; // ERC721Metadata
+    /// @dev ERC2981 royaltyInfo
+    function supportsInterface(bytes4 interfaceId) public view override returns (bool) {
+        return interfaceId == 0x2a55205a || super.supportsInterface(interfaceId);
     }
 }
