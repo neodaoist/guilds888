@@ -61,8 +61,11 @@ Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
   - A collector with all 512 audio-emotional moments, can MELT into the 1/1 ultrarare 8x8x8 CUBE
 
 ![cube gif](./media/CUBE.gif)
+![blank spacer](./media/SPACER.png)
 ![sheet gif](./media/SHEET.gif)
+
 ![strip gif](./media/STYLESTRIP.gif)
+![blank spacer](./media/SPACER.png)
 ![moment jpg](./media/MOMENT-glassblowers-solarpunk.jpg)
 
 # The Code
