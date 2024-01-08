@@ -130,7 +130,7 @@ contract Guilds is ERC1155, ERC721TokenReceiver {
             uint8 styleId = _parseStyleStrip(tokenId);
             style = STYLES[styleId - 1];
 
-            name = string.concat("UNCOMMON ", style, " STRIP");
+            name = string.concat("UNCOMMON ", style, " STYLE");
             description = string.concat(
                 unicode"Ths 8x1 STRIP is an uncommon GUILDS NFT (Edition of 8 x 8 styles). It is a 1D representation of all 8 common GUILD audio-emotional moments of the STYLE. Enjoy the MUSIC and ❤️‍🔥 MELT 🫠"
             );
@@ -142,7 +142,7 @@ contract Guilds is ERC1155, ERC721TokenReceiver {
             uint8 guildId = _parseGuildStrip(tokenId);
             guild = GUILDS[guildId - 1];
 
-            name = string.concat("UNCOMMON ", guild, " STRIP");
+            name = string.concat("UNCOMMON ", guild, " GUILD");
             description = string.concat(
                 unicode"Ths 1x8 STRIP is an uncommon GUILDS NFT (Edition of 8 x 8 guilds). It is a 1D representation of all 8 common STYLE audio-emotional moments of the GUILD. Enjoy the MUSIC and ❤️‍🔥 MELT 🫠"
             );
