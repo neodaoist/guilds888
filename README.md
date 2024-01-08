@@ -42,9 +42,10 @@ TODO
 - There are 64 audio-emotional moments (8 guilds x 8 styles)
 - Each an edition of 8, for a total of 512 moments (8x8x8)
 
-[the rotating cube silent video]
-[a rotating strip silent video]
-[a single moment silent video]
+[cube gif]
+[sheet gif]
+[strip gif]
+[moment jpg]
 
 ## The Code
 
