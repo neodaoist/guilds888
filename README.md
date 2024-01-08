@@ -28,7 +28,7 @@ Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
 
 ## The Music
 
-- There are 8 GUILDS, each represented musically, from Blacksmiths to Candlemakers to Glassblowers and more
+- There are 8 GUILDS, each represented musically, from Blacksmiths to Candlemakers, Glassblowers, and more
 - The total piece is 8 movements, ~12 min long, for flute, bassoon, violin, viola, and mixed percussion
 
 [bts paper and pencil score scanned photo]
