@@ -24,11 +24,11 @@ Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
 
 ## The Background
 
-TODO
+- TODO
 
 ## The Music
 
-- There are 8 GUILDS, each represented musically, eg Blacksmiths, Candlemakers, Glassblowers, etc.
+- There are 8 GUILDS, each represented musically, from Blacksmiths to Candlemakers to Glassblowers and more
 - The total piece is 8 movements, ~12 min long, for flute, bassoon, violin, viola, and mixed percussion
 
 [bts paper and pencil score scanned photo]
@@ -38,7 +38,7 @@ TODO
 
 ## The Art
 
-- There are 8 art STYLES, eg Starry Night, Anime, Cave Art, etc.
+- There are 8 art STYLES, from Cave Art to Solarpunk, Starry Night to Psychedelia
 - There are 64 audio-emotional moments (8 guilds x 8 styles)
 - Each an edition of 8, for a total of 512 moments (8x8x8)
 
@@ -49,6 +49,7 @@ TODO
 
 ## The Code
 
+- TODO
 - An address that owns all 8 common STYLE moments of a Guild can MELT into 1 uncommon STYLE moment strip
 - An address that owns all 8 common GUILD moments of a Style can MELT into 1 uncommon GUILD moment strip
 - An address that owns all 64 audio-emotional moments can MELT into 1 rare MOSAIC moment sheet
@@ -73,6 +74,8 @@ TODO
 
 GUILDS
 
-Get in touch @ TODO
+Score/Parts: contact @neodaoist
+
+Minted on the Superchain January 2024
 
 MIT License 2024 |||| a Loudverse production |||| classical music for the 22nd century
