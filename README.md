@@ -16,11 +16,11 @@ Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
 
 #### Table of Contents
 
-1. [The Background](#-The-Background)
-2. [The Music](#-The-Music)
-3. [The Art](#-The-Art)
-4. [The Code](#-The-Code)
-5. [The Experience](#-The-Experience)
+1. [The Background](#the-background)
+2. [The Music](#the-music)
+3. [The Art](#the-art)
+4. [The Code](#the-code)
+5. [The Experience](#the-experience)
 
 ---
 
