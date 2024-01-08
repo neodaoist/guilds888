@@ -12,8 +12,8 @@ import {Guilds} from "../src/Guilds.sol";
 contract MainnetDeployScript is Script {
     ////////
 
-    address private constant CUBE_CONTRACT = 0x8f64E4b5aD5e97B524223Cf1fcbde8322f5Cf038;
-    uint256 private constant CUBE_TOKEN = 123;
+    address private constant CUBE_CONTRACT = 0x4DB3AB8e606eAdF3d94cf5349a35c415156b89B3;
+    uint256 private constant CUBE_TOKEN = 1;
 
     ////////
 

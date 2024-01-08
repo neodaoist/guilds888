@@ -78,6 +78,9 @@ Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
 ### The GUILDS ERC1155 NFT Contract
 ![contract screenshot](./media/CONTRACT.jpg)
 
+### Designing the Meltable Mechanism
+![a meltable mechanism draft](./media/MECHANISM.jpg)
+
 ### One of the Eight Meltable Functions
 ![a meltable function](./media/MELT.jpg)
 
@@ -85,8 +88,8 @@ Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
 
 ## The Experience
 
-1. [x] MINT the initial 8x8x8 CUBE on Manifold [Manifold CUBE link]
-2. [x] UNMELT the CUBE into 512 audio-emotional moments [BaseScan GUILDS contract link]
+1. [x] MINT the initial 8x8x8 CUBE on [Manifold](https://gallery.manifold.xyz/base/0x4db3ab8e606eadf3d94cf5349a35c415156b89b3/1)
+2. [x] UNMELT the CUBE into 512 audio-emotional moments [BaseScan GUILDS tx link]
 3. [x] MELT a few moment strips and mosaics [Zora ClassicalMusicFan.eth profile link]
 4. [x] List the remaining moments for .000888 ETH [OpenSea GUILDS collection link]
 5. [ ] Enjoy the MUSIC and ❤️‍🔥 MELT 🫠

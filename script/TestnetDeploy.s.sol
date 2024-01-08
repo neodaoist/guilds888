@@ -11,8 +11,12 @@ import {Guilds} from "../src/Guilds.sol";
 // export G=
 // forge verify-contract $G src/Guilds.sol:Guilds --constructor-args $(cast abi-encode "constructor(address,address,uint256)" 0x1Dca4D8ecc422aC5016EFd1b5127077B9490b4E9 $M 1) --chain 84532 --watch --verifier etherscan
 
-// Mint the cube and send the cube to GUILDS --
+// Mint the cube --
 // cast send $M "mint()" --account guildsSales --rpc-url $RPC
+
+//////// PROD Commands
+
+// Send the cube to GUILDS --
 // cast send $M "safeTransferFrom(address,address,uint256)" 0x1Dca4D8ecc422aC5016EFd1b5127077B9490b4E9 $G 1 --rpc-url $RPC --account guildsSales
 
 // Send some moments to FAN --

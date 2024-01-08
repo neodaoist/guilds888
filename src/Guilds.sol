@@ -28,8 +28,8 @@ import {ERC721TokenReceiver} from "solmate/tokens/ERC721.sol";
 contract Guilds is ERC1155, ERC721TokenReceiver {
     ////////
 
-    uint8 private constant EDGE_LENGTH = 8;
     uint8 private constant NUM_COMMONS = 64;
+    uint8 private constant EDGE_LENGTH = 8;
     uint8 private constant MOSAIC_ID = 81;
     uint8 private constant CUBE_ID = 0;
 
@@ -53,8 +53,16 @@ contract Guilds is ERC1155, ERC721TokenReceiver {
         "CANDLEMAKERS",
         "ARROWFLETCHERS"
     ];
-    string[] private STYLES =
-        ["CAVEDRAWING", "SISTINECHAPEL", "STARRYNIGHT", "CUBISM", "SALVADORDALI", "PSYCHEDELIA", "ANIME", "SOLARPUNK"];
+    string[] private STYLES = [
+        "CAVEDRAWING",
+        "SISTINECHAPEL",
+        "STARRYNIGHT",
+        "CUBISM",
+        "SALVADORDALI",
+        "PSYCHEDELIA",
+        "ANIME",
+        "SOLARPUNK"
+    ];
 
     //////// Constructor
 
@@ -186,21 +194,21 @@ contract Guilds is ERC1155, ERC721TokenReceiver {
         );
     }
 
-    function _parseStyleStrip(uint256 tokenId) public pure returns (uint8 styleId) {
+    function _parseStyleStrip(uint256 tokenId) private pure returns (uint8 styleId) {
         require(tokenId > NUM_COMMONS + EDGE_LENGTH);
         require(tokenId <= NUM_COMMONS + EDGE_LENGTH + EDGE_LENGTH);
 
         styleId = uint8(tokenId - NUM_COMMONS - EDGE_LENGTH);
     }
 
-    function _parseGuildStrip(uint256 tokenId) public pure returns (uint8 guildId) {
+    function _parseGuildStrip(uint256 tokenId) private pure returns (uint8 guildId) {
         require(tokenId > NUM_COMMONS);
         require(tokenId <= NUM_COMMONS + EDGE_LENGTH);
 
         guildId = uint8(tokenId - NUM_COMMONS);
     }
 
-    function _parseMoment(uint256 tokenId) public pure returns (uint8 guildId, uint8 styleId) {
+    function _parseMoment(uint256 tokenId) private pure returns (uint8 guildId, uint8 styleId) {
         require(tokenId > 0);
         require(tokenId <= NUM_COMMONS);
 
@@ -319,7 +327,7 @@ contract Guilds is ERC1155, ERC721TokenReceiver {
     }
 
     /// @notice Unmelt 1 ultrarare CUBE into 64 common moments
-    function unmeltCube() public {
+    function unmeltCube() external {
         // Mint all 64x8 common moments
         _unmeltCube(msg.sender);
 
