@@ -102,7 +102,7 @@ Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
 
 ## What's Next?
 
-- The Music — 🎻 Would love to re-record the expanded version in studio, again with ICon Arts Ensemble
+- The Music — 🎻 Would love to re-record the expanded version, again with ICon Arts Ensemble
 - The Code — ⛽️ Definitely some opportunities to gas golf and optimize the contract further
 - The Art — ⏳ Could add a time dimension, where the art unfolds and evolves over time
 
