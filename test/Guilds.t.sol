@@ -68,31 +68,41 @@ contract GuildsTest is Test {
 
     //////// View Functions
 
-    // function test_parseMoment_many() public {
-    //     (uint8 guildId, uint8 styleId) = guilds._parseMoment(1);
-    //     assertEq(guildId, 1);
-    //     assertEq(styleId, 1);
+    function test_parseMoment() public {
+        uint8 guildId;
+        uint8 styleId;
 
-    //     (guildId, styleId) = guilds._parseMoment(56);
-    //     assertEq(guildId, 8);
-    //     assertEq(styleId, 7);
+        (guildId, styleId) = guilds._parseMoment(1);
+        assertEq(guildId, 1);
+        assertEq(styleId, 1);
 
-    //     (guildId, styleId) = guilds._parseMoment(55);
-    //     assertEq(guildId, 7);
-    //     assertEq(styleId, 7);
+        (guildId, styleId) = guilds._parseMoment(64);
+        assertEq(guildId, 8);
+        assertEq(styleId, 8);
+    }
 
-    //     (guildId, styleId) = guilds._parseMoment(54);
-    //     assertEq(guildId, 7);
-    //     assertEq(styleId, 6);
+    function test_parseMoment_many() public {
+        uint8 guildId;
+        uint8 styleId;
 
-    //     (guildId, styleId) = guilds._parseMoment(53);
-    //     assertEq(guildId, 7);
-    //     assertEq(styleId, 5);
+        for (uint256 i = 0; i < EDGE_LENGTH; ++i) {
+            for (uint256 j = 1; j <= EDGE_LENGTH; ++j) {
+                uint8 moment = uint8((i * EDGE_LENGTH) + j);
 
-    //     (guildId, styleId) = guilds._parseMoment(8);
-    //     assertEq(guildId, 1);
-    //     assertEq(styleId, 8);
-    // }
+                (guildId, styleId) = guilds._parseMoment(moment);
+                assertEq(guildId, j);
+                assertEq(styleId, i + 1);
+            }
+        }
+    }
+
+    function testRevert_parseMoment() public {
+        vm.expectRevert();
+        guilds._parseMoment(0);
+
+        vm.expectRevert();
+        guilds._parseMoment(65);
+    }
 
     function test_parseGuildStrip_many() public {
         assertEq(guilds._parseGuildStrip(65), 1);
@@ -111,7 +121,7 @@ contract GuildsTest is Test {
 
         vm.expectRevert();
         guilds._parseGuildStrip(8);
-        
+
         vm.expectRevert();
         guilds._parseGuildStrip(73);
     }
@@ -130,13 +140,13 @@ contract GuildsTest is Test {
     function testRevert_parseStyleStrip() public {
         vm.expectRevert();
         guilds._parseStyleStrip(1);
-        
+
         vm.expectRevert();
         guilds._parseStyleStrip(8);
-        
+
         vm.expectRevert();
         guilds._parseStyleStrip(65);
-        
+
         vm.expectRevert();
         guilds._parseStyleStrip(81);
     }

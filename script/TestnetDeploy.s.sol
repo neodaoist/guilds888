@@ -7,11 +7,12 @@ import {Guilds} from "../src/Guilds.sol";
 
 // Deploy the contracts --
 // forge script script/TestnetDeploy.s.sol --rpc-url $RPC --broadcast --slow --account testDeployer --sender 0x79847aA966193633a706A644AEaB42ae9675da27
-// forge verify-contract $G src/Guilds.sol:Guilds --constructor-args $(cast abi-encode "constructor(address,address,uint256)" 0x1Dca4D8ecc422aC5016EFd1b5127077B9490b4E9 0xfCa43c4595893D353b6D3596D2Bc9182e691a643 1) --chain 84532 --watch --verifier etherscan
+// export M=
+// export G=
+// forge verify-contract $G src/Guilds.sol:Guilds --constructor-args $(cast abi-encode "constructor(address,address,uint256)" 0x1Dca4D8ecc422aC5016EFd1b5127077B9490b4E9 $M 1) --chain 84532 --watch --verifier etherscan
 
-// Mint the cube --
+// Mint the cube and send the cube to GUILDS --
 // cast send $M "mint()" --account guildsSales --rpc-url $RPC
-// Send the cube to GUILDS --
 // cast send $M "safeTransferFrom(address,address,uint256)" 0x1Dca4D8ecc422aC5016EFd1b5127077B9490b4E9 $G 1 --rpc-url $RPC --account guildsSales
 
 // Send some moments to FAN --
