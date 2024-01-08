@@ -55,8 +55,8 @@ Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
 - There are 64 audio-emotional moments (8 guilds x 8 styles)
 - Each an edition of 8, for a total of 512 moments (8x8x8)
 - How can collectors MELT their common moment NFTs into rarer NFTs?
-  - A collector with all 8 common STYLE moments of a Guild, can MELT into 1 uncommon 8x1 STYLE moment strip
-  - A collector with all 8 common GUILD moments of a Style, can MELT into 1 uncommon 1x8 GUILD moment strip
+  - A collector with all 8 STYLE moments of a Guild, can MELT into 1 uncommon 8x1 STYLE moment strip
+  - A collector with all 8 GUILD moments of a Style, can MELT into 1 uncommon 1x8 GUILD moment strip
   - A collector with all 64 audio-emotional moments, can MELT into 1 rare 8x8 MOSAIC moment sheet
   - A collector with all 512 audio-emotional moments, can MELT into the 1/1 ultrarare 8x8x8 CUBE
 
