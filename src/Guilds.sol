@@ -55,11 +55,11 @@ contract Guilds is ERC1155, ERC721TokenReceiver {
         "ARROWFLETCHERS"
     ];
     string[] private STYLES = [
-        "CAVE DRAWING",
-        "SISTINE CHAPEL",
-        "STARRY NIGHT",
+        "CAVEDRAWING",
+        "SISTINECHAPEL",
+        "STARRYNIGHT",
         "CUBISM",
-        "SALVADOR DALI",
+        "SALVADORDALI",
         "PSYCHEDELIA",
         "ANIME",
         "SOLARPUNK"
@@ -113,16 +113,16 @@ contract Guilds is ERC1155, ERC721TokenReceiver {
             name = "GUILDS - ULTRARARE CUBE";
             description =
                 "This 8x8x8 CUBE is the rarest of all GUILDS NFTs (1/1). It is a 3D representation of all 8 editions of all 64 common GUILDS audio-emotional moments.\n\nTODO";
-            image = "CUBE.jpg";
-            animation_url = "CUBE%20video.mp4";
+            image = string.concat(BASE_URI, "CUBE.jpg");
+            animation_url = string.concat(BASE_URI, "CUBE%20video.mp4");
             rarity = "ULTRARARE";
         } else if (tokenId == MOSAIC_ID) {
             // MOSAIC
             name = "GUILDS - RARE MOSAIC";
             description =
                 "This 8x8 MOSAIC is a rare GUILDS NFT (Edition of 8). It is a 2D representation of all 64 common GUILDS audio-emotional moments.\n\nTODO";
-            image = "SHEET.jpg";
-            animation_url = "SHEET%20video.mp4";
+            image = string.concat(BASE_URI, "SHEET.jpg");
+            animation_url = string.concat(BASE_URI, "SHEET%20video.mp4");
             rarity = "RARE";
         } else if (tokenId > NUM_COMMONS + EDGE_LENGTH) {
             // STYLE STRIP
@@ -133,8 +133,8 @@ contract Guilds is ERC1155, ERC721TokenReceiver {
             description = string.concat(
                 "Ths 8x1 STRIP is an uncommon GUILDS NFT (Edition of 8 x 8 styles). It is a 1D representation of all 8 common GUILD audio-emotional moments of the STYLE.\n\nTODO"
             );
-            image = "";
-            animation_url = "";
+            image = string.concat(BASE_URI, "");
+            animation_url = string.concat(BASE_URI, "");
             rarity = "UNCOMMON";
         } else if (tokenId > NUM_COMMONS) {
             // GUILD STRIP
@@ -145,8 +145,8 @@ contract Guilds is ERC1155, ERC721TokenReceiver {
             description = string.concat(
                 "Ths 1x8 STRIP is an uncommon GUILDS NFT (Edition of 8 x 8 guilds). It is a 1D representation of all 8 common STYLE audio-emotional moments of the GUILD.\n\nTODO"
             );
-            image = "";
-            animation_url = "";
+            image = string.concat(BASE_URI, "");
+            animation_url = string.concat(BASE_URI, "");
             rarity = "UNCOMMON";
         } else {
             // MOMENT
@@ -159,7 +159,7 @@ contract Guilds is ERC1155, ERC721TokenReceiver {
                 "This is a common GUILDS NFT (Edition of 64). It is a single audio-emotional moment.\n\nTODO"
             );
             image = string.concat(guild, ENCODED_SPACE, style, ".jpg");
-            animation_url = "";
+            animation_url = string.concat(BASE_URI, "%20video.mp4");
             rarity = "COMMON";
         }
 
