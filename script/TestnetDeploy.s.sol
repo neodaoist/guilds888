@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.23;
+pragma solidity 0.8.19;
 
 import {Script, console2} from "forge-std/Script.sol";
 import {MarketplaceNFT} from "../test/MarketplaceNFT.sol";
@@ -11,8 +11,10 @@ import {Guilds} from "../src/Guilds.sol";
 // export G=
 // forge verify-contract $G src/Guilds.sol:Guilds --constructor-args $(cast abi-encode "constructor(address,address,uint256)" 0x1Dca4D8ecc422aC5016EFd1b5127077B9490b4E9 $M 1) --chain 84532 --watch --verifier etherscan
 
-// Mint the cube and send the cube to GUILDS --
+// (TESTNET ONLY) Mint the cube --
 // cast send $M "mint()" --account guildsSales --rpc-url $RPC
+
+// Send the cube to GUILDS --
 // cast send $M "safeTransferFrom(address,address,uint256)" 0x1Dca4D8ecc422aC5016EFd1b5127077B9490b4E9 $G 1 --rpc-url $RPC --account guildsSales
 
 // Send some moments to FAN --

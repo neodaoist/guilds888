@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.23;
+pragma solidity 0.8.19;
 
 import {Base64} from "./Base64.sol";
 import {ERC1155} from "solmate/tokens/ERC1155.sol";
@@ -28,8 +28,8 @@ import {ERC721TokenReceiver} from "solmate/tokens/ERC721.sol";
 contract Guilds is ERC1155, ERC721TokenReceiver {
     ////////
 
-    uint8 private constant EDGE_LENGTH = 8;
     uint8 private constant NUM_COMMONS = 64;
+    uint8 private constant EDGE_LENGTH = 8;
     uint8 private constant MOSAIC_ID = 81;
     uint8 private constant CUBE_ID = 0;
 
@@ -53,8 +53,17 @@ contract Guilds is ERC1155, ERC721TokenReceiver {
         "CANDLEMAKERS",
         "ARROWFLETCHERS"
     ];
-    string[] private STYLES =
-        ["CAVEDRAWING", "SISTINECHAPEL", "STARRYNIGHT", "CUBISM", "SALVADORDALI", "PSYCHEDELIA", "ANIME", "SOLARPUNK"];
+    
+    string[] private STYLES = [
+        "CAVEDRAWING",
+        "SISTINECHAPEL",
+        "STARRYNIGHT",
+        "CUBISM",
+        "SALVADORDALI",
+        "PSYCHEDELIA",
+        "ANIME",
+        "SOLARPUNK"
+    ];
 
     //////// Constructor
 
@@ -122,7 +131,7 @@ contract Guilds is ERC1155, ERC721TokenReceiver {
             uint8 styleId = _parseStyleStrip(tokenId);
             style = STYLES[styleId - 1];
 
-            name = string.concat("UNCOMMON ", style, " STRIP");
+            name = string.concat("UNCOMMON ", style, " STYLE");
             description = string.concat(
                 unicode"Ths 8x1 STRIP is an uncommon GUILDS NFT (Edition of 8 x 8 styles). It is a 1D representation of all 8 common GUILD audio-emotional moments of the STYLE. Enjoy the MUSIC and ❤️‍🔥 MELT 🫠"
             );
@@ -134,7 +143,7 @@ contract Guilds is ERC1155, ERC721TokenReceiver {
             uint8 guildId = _parseGuildStrip(tokenId);
             guild = GUILDS[guildId - 1];
 
-            name = string.concat("UNCOMMON ", guild, " STRIP");
+            name = string.concat("UNCOMMON ", guild, " GUILD");
             description = string.concat(
                 unicode"Ths 1x8 STRIP is an uncommon GUILDS NFT (Edition of 8 x 8 guilds). It is a 1D representation of all 8 common STYLE audio-emotional moments of the GUILD. Enjoy the MUSIC and ❤️‍🔥 MELT 🫠"
             );
@@ -186,21 +195,21 @@ contract Guilds is ERC1155, ERC721TokenReceiver {
         );
     }
 
-    function _parseStyleStrip(uint256 tokenId) public pure returns (uint8 styleId) {
+    function _parseStyleStrip(uint256 tokenId) private pure returns (uint8 styleId) {
         require(tokenId > NUM_COMMONS + EDGE_LENGTH);
         require(tokenId <= NUM_COMMONS + EDGE_LENGTH + EDGE_LENGTH);
 
         styleId = uint8(tokenId - NUM_COMMONS - EDGE_LENGTH);
     }
 
-    function _parseGuildStrip(uint256 tokenId) public pure returns (uint8 guildId) {
+    function _parseGuildStrip(uint256 tokenId) private pure returns (uint8 guildId) {
         require(tokenId > NUM_COMMONS);
         require(tokenId <= NUM_COMMONS + EDGE_LENGTH);
 
         guildId = uint8(tokenId - NUM_COMMONS);
     }
 
-    function _parseMoment(uint256 tokenId) public pure returns (uint8 guildId, uint8 styleId) {
+    function _parseMoment(uint256 tokenId) private pure returns (uint8 guildId, uint8 styleId) {
         require(tokenId > 0);
         require(tokenId <= NUM_COMMONS);
 
@@ -319,7 +328,7 @@ contract Guilds is ERC1155, ERC721TokenReceiver {
     }
 
     /// @notice Unmelt 1 ultrarare CUBE into 64 common moments
-    function unmeltCube() public {
+    function unmeltCube() external {
         // Mint all 64x8 common moments
         _unmeltCube(msg.sender);
 

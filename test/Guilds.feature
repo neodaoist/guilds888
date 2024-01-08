@@ -27,7 +27,7 @@ Feature: Guilds
 
     Scenario: Deploy meltable contract to mainnet
 
-    # [ ] Token Metadata (images and animations on IPFS, JSON onchain)
+    # [x] Token Metadata (images and animations on IPFS, JSON onchain)
 
     Scenario: Token metadata for 64 common moments
 
@@ -39,31 +39,9 @@ Feature: Guilds
 
     Scenario: Token metadata for 1 ultrarare CUBE
 
-    # [ ] Collection Metadata
+    # [x] Collection Metadata
 
     Scenario: Collection metadata
-
-    # [ ] Transfer
-
-    Scenario: Transfer and Balance checks for 64 common moments
-
-    Scenario: Transfer and Balance checks for 8 uncommon STYLE moment strips
-
-    Scenario: Transfer and Balance checks for 8 uncommon GUILD moment strips
-
-    Scenario: Transfer and Balance checks for 1 rare MOSAIC moment
-
-    Scenario: Transfer and Balance checks for 1 ultrarare CUBE
-
-    # [ ] Approvals
-
-    Scenario: Alice approves Bob for specific token ID
-
-    Scenario: Alice approves Bob for all token IDs
-
-    Scenario: Alice revokes Bob's approval for specific token ID
-
-    Scenario: Alice revokes Bob's approval for all token IDs
 
     # [x] Meltable Functions
 
