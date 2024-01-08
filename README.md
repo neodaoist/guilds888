@@ -28,7 +28,7 @@ Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
 
 - Sibiu, Romania was founded by Saxon settlers during the mid-late 12th century
 - In the 14th century, it was already an important trade centre, with craftspeople divided in various guilds
-- This piece is inspired by this rich history, employing a musical language to evoke the essence of each guild
+- This piece is inspired by that rich history, employing a musical language to evoke the essence of each guild
 
 # The Music
 
