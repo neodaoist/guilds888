@@ -75,7 +75,11 @@ Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
 
 <div style="text-align: center;">
 
+### The GUILDS ERC1155 NFT Contract
 ![contract screenshot](./media/CONTRACT.jpg)
+
+### One of the Eight Meltable Functions
+![a meltable function](./media/MELT.jpg)
 
 </div>
 

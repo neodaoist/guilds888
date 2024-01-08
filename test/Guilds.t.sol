@@ -94,6 +94,53 @@ contract GuildsTest is Test {
     //     assertEq(styleId, 8);
     // }
 
+    function test_parseGuildStrip_many() public {
+        assertEq(guilds._parseGuildStrip(65), 1);
+        assertEq(guilds._parseGuildStrip(66), 2);
+        assertEq(guilds._parseGuildStrip(67), 3);
+        assertEq(guilds._parseGuildStrip(68), 4);
+        assertEq(guilds._parseGuildStrip(69), 5);
+        assertEq(guilds._parseGuildStrip(70), 6);
+        assertEq(guilds._parseGuildStrip(71), 7);
+        assertEq(guilds._parseGuildStrip(72), 8);
+    }
+
+    function testRevert_parseGuildStrip() public {
+        vm.expectRevert();
+        guilds._parseGuildStrip(1);
+
+        vm.expectRevert();
+        guilds._parseGuildStrip(8);
+        
+        vm.expectRevert();
+        guilds._parseGuildStrip(73);
+    }
+
+    function test_parseStyleStrip_many() public {
+        assertEq(guilds._parseStyleStrip(73), 1);
+        assertEq(guilds._parseStyleStrip(74), 2);
+        assertEq(guilds._parseStyleStrip(75), 3);
+        assertEq(guilds._parseStyleStrip(76), 4);
+        assertEq(guilds._parseStyleStrip(77), 5);
+        assertEq(guilds._parseStyleStrip(78), 6);
+        assertEq(guilds._parseStyleStrip(79), 7);
+        assertEq(guilds._parseStyleStrip(80), 8);
+    }
+
+    function testRevert_parseStyleStrip() public {
+        vm.expectRevert();
+        guilds._parseStyleStrip(1);
+        
+        vm.expectRevert();
+        guilds._parseStyleStrip(8);
+        
+        vm.expectRevert();
+        guilds._parseStyleStrip(65);
+        
+        vm.expectRevert();
+        guilds._parseStyleStrip(81);
+    }
+
     //////// Meltable Functions
 
     // Melt all 8 common styles of a single guild into 1 uncommon GUILD moment strip

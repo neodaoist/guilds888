@@ -114,7 +114,7 @@ contract Guilds is ERC1155, ERC721TokenReceiver {
             description =
                 "This 8x8x8 CUBE is the rarest of all GUILDS NFTs (1/1). It is a 3D representation of all 8 editions of all 64 common GUILDS audio-emotional moments.\n\nTODO";
             image = string.concat(BASE_URI, "CUBE.jpg");
-            animation_url = string.concat(BASE_URI, "CUBE%20video.mp4");
+            animation_url = string.concat(BASE_URI, "CUBEvideo.mp4");
             rarity = "ULTRARARE";
         } else if (tokenId == MOSAIC_ID) {
             // MOSAIC
@@ -122,7 +122,7 @@ contract Guilds is ERC1155, ERC721TokenReceiver {
             description =
                 "This 8x8 MOSAIC is a rare GUILDS NFT (Edition of 8). It is a 2D representation of all 64 common GUILDS audio-emotional moments.\n\nTODO";
             image = string.concat(BASE_URI, "SHEET.jpg");
-            animation_url = string.concat(BASE_URI, "SHEET%20video.mp4");
+            animation_url = string.concat(BASE_URI, "SHEETvideo.mp4");
             rarity = "RARE";
         } else if (tokenId > NUM_COMMONS + EDGE_LENGTH) {
             // STYLE STRIP
@@ -133,8 +133,8 @@ contract Guilds is ERC1155, ERC721TokenReceiver {
             description = string.concat(
                 "Ths 8x1 STRIP is an uncommon GUILDS NFT (Edition of 8 x 8 styles). It is a 1D representation of all 8 common GUILD audio-emotional moments of the STYLE.\n\nTODO"
             );
-            image = string.concat(BASE_URI, "");
-            animation_url = string.concat(BASE_URI, "");
+            image = string.concat(BASE_URI, "", "-STYLESTRIP.jpg");
+            animation_url = string.concat(BASE_URI, "", "-STYLESTRIPvideo.mp4");
             rarity = "UNCOMMON";
         } else if (tokenId > NUM_COMMONS) {
             // GUILD STRIP
@@ -145,8 +145,8 @@ contract Guilds is ERC1155, ERC721TokenReceiver {
             description = string.concat(
                 "Ths 1x8 STRIP is an uncommon GUILDS NFT (Edition of 8 x 8 guilds). It is a 1D representation of all 8 common STYLE audio-emotional moments of the GUILD.\n\nTODO"
             );
-            image = string.concat(BASE_URI, "");
-            animation_url = string.concat(BASE_URI, "");
+            image = string.concat(BASE_URI, "", "-GUILDSTRIP.jpg");
+            animation_url = string.concat(BASE_URI, "", "-GUILDSTRIPvideo.mp4");
             rarity = "UNCOMMON";
         } else {
             // MOMENT
@@ -158,8 +158,9 @@ contract Guilds is ERC1155, ERC721TokenReceiver {
             description = string.concat(
                 "This is a common GUILDS NFT (Edition of 64). It is a single audio-emotional moment.\n\nTODO"
             );
-            image = string.concat(guild, ENCODED_SPACE, style, ".jpg");
-            animation_url = string.concat(BASE_URI, "%20video.mp4");
+            // image = string.concat(guild, ENCODED_SPACE, style, ".jpg");
+            image = string.concat("", ".jpg");
+            animation_url = string.concat(BASE_URI, "", "video.mp4");
             rarity = "COMMON";
         }
 
@@ -193,9 +194,19 @@ contract Guilds is ERC1155, ERC721TokenReceiver {
         );
     }
 
-    function _parseStyleStrip(uint256 tokenId) public pure returns (uint8 styleId) {}
+    function _parseStyleStrip(uint256 tokenId) public pure returns (uint8 styleId) {
+        require(tokenId > NUM_COMMONS + EDGE_LENGTH);
+        require(tokenId <= NUM_COMMONS + EDGE_LENGTH + EDGE_LENGTH);
 
-    function _parseGuildStrip(uint256 tokenId) public pure returns (uint8 guildId) {}
+        styleId = uint8(tokenId - NUM_COMMONS - EDGE_LENGTH);
+    }
+
+    function _parseGuildStrip(uint256 tokenId) public pure returns (uint8 guildId) {
+        require(tokenId > NUM_COMMONS);
+        require(tokenId <= NUM_COMMONS + EDGE_LENGTH);
+
+        guildId = uint8(tokenId - NUM_COMMONS);
+    }
 
     function _parseMoment(uint256 tokenId) public pure returns (uint8 guildId, uint8 styleId) {}
 
