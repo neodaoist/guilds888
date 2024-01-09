@@ -40,8 +40,8 @@ Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
 ### Sibiu's House of the Journeymen
 ![House of the Journeymen](./media/GUILDHOUSE-small.jpg)
 
-### A Modern-day Carpenter at Work in Sibiu
-![a Sibiu carpenter](./media/GUILDWORKER-small.jpg)
+### A Modern-day Glazier at Work in Sibiu
+![a Sibiu glazier](./media/GUILDWORKER-small.jpg)
 
 # The Music
 
@@ -105,11 +105,11 @@ Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
 
 # The Code
 
-- The [initial CUBE contract](https://basescan.org/address/0x4db3ab8e606eadf3d94cf5349a35c415156b89b3?a=1#code) is an ERC721, created with Manifold Studio on Base
+- The [initial GCUBE contract](https://basescan.org/address/0x4db3ab8e606eadf3d94cf5349a35c415156b89b3?a=1#code) is an ERC721, created with Manifold Studio on Base
 - The [meltable GUILDS contract](https://basescan.org/address/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92#code) is an ERC1155, written with Foundry and Solmate
 - MELTABLE mechanism is bidirectional —
-  - Singles can be MELTED into compounds
-  - Compounds can be UNMELTED into singles
+  - Singles can be MELTED into composites
+  - Composites can be UNMELTED into singles
 - Code by Neodaoist; for more details, check out the [test suite](./test/Guilds.t.sol)
 
 ### The GUILDS ERC1155 NFT Contract
@@ -129,12 +129,12 @@ Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
 4. [x] List the remaining moments [for sale for .000888 ETH!](https://opensea.io/collection/guilds888)
 5. [ ] Enjoy the MUSIC and ❤️‍🔥 MELT 🫠
 
-## What's Next for GUILDS?
+## What's Next for **GUILDS**?
 
-- The Music — 🎻 Would love to re-record the expanded version, again with [ICon Arts Ensemble](https://iconartsfestival.com/)
-- The Art — ⏳ Could add a temporal dimension, where the art unfolds and evolves over time
-- The Code — ⛽️ Definitely some opportunities to gas golf and optimize the contract further
-- The Experience — 💻 Develop a frontend, because right now melting is done by interacting directly with the contract, eg using [BaseScan](https://basescan.org/), [op-viem](https://www.opviem.sh/), or [cast](https://book.getfoundry.sh/cast/)
+- **The Music** — 🎻 Would love to re-record the expanded version, again with [ICon Arts Ensemble](https://iconartsfestival.com/)
+- **The Art** — ⏳ Could add a temporal dimension, where the art unfolds and evolves over time
+- **The Code** — ⛽️ Definitely some opportunities to gas golf and optimize the contract further
+- **The Experience** — 💻 Develop a frontend, because right now melting is done by interacting directly with the contract, eg using [BaseScan](https://basescan.org/), [op-viem](https://www.opviem.sh/), or [cast](https://book.getfoundry.sh/cast/)
 
 ---
 
