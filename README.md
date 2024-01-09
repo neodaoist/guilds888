@@ -48,7 +48,7 @@ Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
 - There are 8 GUILDS, each represented musically, from Blacksmiths to Candlemakers, Glassblowers, and more
 - The total piece is 8 movements, ~12 min long, for flute, bassoon, violin, viola, and mixed percussion
 - Music by Neodaoist; for full score and/or parts, contact [@neodaoist](https://twitter.com/neodaoist)
-- In the [full version](https://gallery.manifold.xyz/base/0x4db3ab8e606eadf3d94cf5349a35c415156b89b3/1), there is a "promenade" motif on tubular bells between movements, which spells out SI-B-I-U (this idea came to my composition teacher in a dream ✨)
+- In the [full version](https://gallery.manifold.xyz/base/0x4db3ab8e606eadf3d94cf5349a35c415156b89b3/1), there is a "promenade" motif on tubular bells between movements, spelling out SI-B-I-U (this idea came to my composition teacher in a dream ✨)
 - Listen to the music of GUILDS! Which is your favorite movement?
   - [GOLDSMITHS](https://opensea.io/assets/base/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/9)
   - [BLACKSMITHS](https://opensea.io/assets/base/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/50)
