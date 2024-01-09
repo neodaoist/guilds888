@@ -8,7 +8,7 @@ Composed with PAPER and PENCIL, for ICon Arts and the Sibiu Philharmonic
 
 Inspired by the Medieval craft GUILDS of Sibiu, Transilvania, Romania
 
-For CHAMBER QUINTET - flute, bassoon, viola, violin, percussion
+For CHAMBER QUINTET - flute, bassoon, violin, viola, percussion
 
 Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
 
@@ -28,16 +28,27 @@ Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
 
 # The Background
 
-- Sibiu, Romania was founded by Saxon settlers during the mid-late 12th century
-- By the 14th century it was already an important trade center, with craftspeople divided into  various guilds
+- Sibiu was founded in Transilvania by Saxon settlers, during the mid–late 12th century
+- By the 14th century it was already an important trade center, with craftspeople divided into 40 guilds
+- Like other Transilvanian cities then, the citadel walls were lined with towers, each maintained by a guild
 - This piece is inspired by that rich history, employing a musical language to evoke the essence of each guild
-- While the digital guilds of tomorrow may be frontend and contracts, growth and community — craftsmanship will always matter
+- While the digital guilds of tomorrow may be Frontend or Contracts, Growth or Community — craftsmanship will always matter
+
+### A Sibiu Guild Tower
+![a Sibiu guild tower, in the citadel wall](./media/GUILDTOWER.jpg)
+
+### Sibiu's House of the Journeymen
+![House of the Journeymen](./media/GUILDHOUSE.jpg)
+
+### A Modern-day Carpenter at Work in Sibiu
+![a Sibiu carpenter](./media/GUILDWORKER.jpg)
 
 # The Music
 
 - There are 8 GUILDS, each represented musically, from Blacksmiths to Candlemakers, Glassblowers, and more
 - The total piece is 8 movements, ~12 min long, for flute, bassoon, violin, viola, and mixed percussion
 - Music by Neodaoist; for full score and/or parts, contact [@neodaoist](https://twitter.com/neodaoist)
+- In the [full version](https://gallery.manifold.xyz/base/0x4db3ab8e606eadf3d94cf5349a35c415156b89b3/1), there is a "promenade" motif on tubular bells between movements, which spells out SI-B-I-U (this idea came to my composition teacher in a dream ✨)
 - Listen to the music of GUILDS! Which is your favorite movement?
   - [GOLDSMITHS](https://opensea.io/assets/base/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/9)
   - [BLACKSMITHS](https://opensea.io/assets/base/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/50)
@@ -54,6 +65,9 @@ Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
 ### Final Engraved Score
 ![engraved score](./media/ENGRAVEDSCORE.jpg)
 
+### Sibiu Promenade Motif
+![engraved score](./media/PROMENADE.jpg)
+
 ### Behind-the-scenes Rehearsal
 ![btc rehearsal](./media/REHEARSAL.jpg)
 
@@ -69,8 +83,8 @@ Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
 - There are 64 audio-emotional moments (8 guilds x 8 styles)
 - Each an edition of 8, for a total of 512 moments (8x8x8)
 - How can collectors MELT their common moment NFTs into rarer NFTs?
-  - A collector with all 8 STYLE moments of a Guild, can MELT into an [uncommon 8x1 STYLE moment strip](https://opensea.io/assets/base/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/73)
-  - A collector with all 8 GUILD moments of a Style, can MELT into an [uncommon 1x8 GUILD moment strip](https://opensea.io/assets/base/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/66)
+  - A collector with all 8 style moments of a guild, can MELT into an [uncommon 1x8 GUILD moment strip](https://opensea.io/assets/base/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/73)
+  - A collector with all 8 guild moments of a style, can MELT into an [uncommon 8x1 STYLE moment strip](https://opensea.io/assets/base/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/66)
   - A collector with all 64 audio-emotional moments, can MELT into a [rare 8x8 MOSAIC moment sheet](https://opensea.io/assets/base/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/81)
   - A collector with all 512 audio-emotional moments, can MELT into the [1/1 ultrarare 8x8x8 CUBE](https://gallery.manifold.xyz/base/0x4db3ab8e606eadf3d94cf5349a35c415156b89b3/1)
 - 2D art prompted by Neodaoist; 3D art modeled by digital collaborator (literally paid with OP airdrop earnings!)
@@ -99,8 +113,6 @@ Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
 - For more details, check out the [test suite](./test/Guilds.t.sol)
 - Code by Neodaoist
 
-<div style="text-align: center;">
-
 ### The GUILDS ERC1155 NFT Contract
 ![contract screenshot](./media/CONTRACT.jpg)
 
@@ -110,8 +122,6 @@ Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
 ### One of the Eight Meltable Functions
 ![a meltable function](./media/MELT.jpg)
 
-</div>
-
 ## The Experience
 
 1. [x] Deploy the contract and MINT the 8x8x8 CUBE with [Manifold](https://gallery.manifold.xyz/base/0x4db3ab8e606eadf3d94cf5349a35c415156b89b3/1)
@@ -120,11 +130,12 @@ Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
 4. [x] List the remaining moments [for sale for .000888 ETH!](https://opensea.io/collection/guilds888)
 5. [ ] Enjoy the MUSIC and ❤️‍🔥 MELT 🫠
 
-## What's Next?
+## What's Next for GUILDS?
 
-- The Music — 🎻 Would love to re-record the expanded version, again with ICon Arts Ensemble
+- The Music — 🎻 Would love to re-record the expanded version, again with [ICon Arts Ensemble](https://iconartsfestival.com/)
 - The Code — ⛽️ Definitely some opportunities to gas golf and optimize the contract further
 - The Art — ⏳ Could add a time dimension, where the art unfolds and evolves over time
+- The Experience — 💻 Could use a frontend, because right now, you have to interact directly with the contract to melt, eg using [BaseScan](https://basescan.org/), [op-viem](https://www.opviem.sh/), or [cast](https://book.getfoundry.sh/cast/)
 
 ---
 
