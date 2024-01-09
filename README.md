@@ -29,14 +29,24 @@ Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
 # The Background
 
 - Sibiu, Romania was founded by Saxon settlers during the mid-late 12th century
-- In the 14th century, it was already an important trade centre, with craftspeople divided in various guilds
+- By the 14th century it was already an important trade center, with craftspeople divided into  various guilds
 - This piece is inspired by that rich history, employing a musical language to evoke the essence of each guild
+- While the digital guilds of tomorrow may be frontend and contracts, growth and community — craftsmanship will always matter
 
 # The Music
 
 - There are 8 GUILDS, each represented musically, from Blacksmiths to Candlemakers, Glassblowers, and more
 - The total piece is 8 movements, ~12 min long, for flute, bassoon, violin, viola, and mixed percussion
 - For full score and/or parts, contact [@neodaoist](https://twitter.com/neodaoist)
+- Listen to the music of Guilds! Which is your favorite movement?
+  1. [GOLDSMITHS](https://opensea.io/assets/base/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/9)
+  2. [BLACKSMITHS](https://opensea.io/assets/base/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/50)
+  3. [EMBROIDERERS](https://opensea.io/assets/base/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/35)
+  4. [STONEMASONS](https://opensea.io/assets/base/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/4)
+  5. [GLASSBLOWERS](https://opensea.io/assets/base/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/21)
+  6. [COBBLERS](https://opensea.io/assets/base/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/30)
+  7. [CANDLEMAKERS](https://opensea.io/assets/base/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/47)
+  8. [ARROWFLETCHERS](https://opensea.io/assets/base/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/64)
 - Music by Neodaoist
 
 ### Paper and Pencil Draft
@@ -64,7 +74,9 @@ Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
   - A collector with all 8 GUILD moments of a Style, can MELT into an [uncommon 1x8 GUILD moment strip](https://opensea.io/assets/base/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/66)
   - A collector with all 64 audio-emotional moments, can MELT into a [rare 8x8 MOSAIC moment sheet](https://opensea.io/assets/base/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/81)
   - A collector with all 512 audio-emotional moments, can MELT into the [1/1 ultrarare 8x8x8 CUBE](https://gallery.manifold.xyz/base/0x4db3ab8e606eadf3d94cf5349a35c415156b89b3/1)
-- 2D art prompted by Neodaoist; 3D art modeled by a digital collaborator
+- 2D art prompted by Neodaoist; 3D art modeled and animated by a digital collaborator (literally paid for with OP airdrop earnings!)
+
+### Some Examples of the Art
 
 ![cube gif](./media/CUBE.gif)
 ![blank spacer](./media/SPACER.png)
@@ -72,7 +84,11 @@ Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
 
 ![strip gif](./media/STYLESTRIP.gif)
 ![blank spacer](./media/SPACER.png)
-![moment jpg](./media/MOMENT-glassblowers-solarpunk.jpg)
+![moment jpg](./media/MOMENT-arrowfletchers-solarpunk.jpg)
+
+![strip gif](./media/MOMENT-arrowfletchers-cubism.jpg)
+![blank spacer](./media/SPACER.png)
+![moment jpg](./media/MOMENT-arrowfletchers-anime.jpg)
 
 # The Code
 
@@ -109,7 +125,7 @@ Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
 
 - The Music — 🎻 Would love to re-record the expanded version, again with ICon Arts Ensemble
 - The Code — ⛽️ Definitely some opportunities to gas golf and optimize the contract further
-- The Art — ⏳ Could add a time dimension, where the art unfolds and evolves over time
+- The Art — ⏳ Could add a time dimension, where the art unfolds and evolves over time, perhaps including the score and parts as an interactive download
 
 ---
 
