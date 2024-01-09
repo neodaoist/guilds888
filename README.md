@@ -124,7 +124,7 @@ Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
 
 - The Music — 🎻 Would love to re-record the expanded version, again with ICon Arts Ensemble
 - The Code — ⛽️ Definitely some opportunities to gas golf and optimize the contract further
-- The Art — ⏳ Could add a time dimension, where the art unfolds and evolves over time, perhaps including the score and parts as an interactive download
+- The Art — ⏳ Could add a time dimension, where the art unfolds and evolves over time
 
 ---
 
