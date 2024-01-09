@@ -35,13 +35,13 @@ Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
 - While the digital guilds of tomorrow may be Frontend or Contracts, Growth or Community — craftsmanship will always matter
 
 ### A Sibiu Guild Tower
-![a Sibiu guild tower, in the citadel wall](./media/GUILDTOWER.jpg)
+![a Sibiu guild tower, in the citadel wall](./media/GUILDTOWER-small.jpg)
 
 ### Sibiu's House of the Journeymen
-![House of the Journeymen](./media/GUILDHOUSE.jpg)
+![House of the Journeymen](./media/GUILDHOUSE-small.jpg)
 
 ### A Modern-day Carpenter at Work in Sibiu
-![a Sibiu carpenter](./media/GUILDWORKER.jpg)
+![a Sibiu carpenter](./media/GUILDWORKER-small.jpg)
 
 # The Music
 
