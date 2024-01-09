@@ -32,7 +32,7 @@ Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
 - By the 14th century it was already an important trade center, with craftspeople divided into 40 guilds
 - Like other Transilvanian cities then, the citadel walls were lined with towers, each maintained by a guild
 - This piece is inspired by that rich history, employing a musical language to evoke the essence of each guild
-- While the digital guilds of tomorrow may be Frontend or Contracts, Growth or Community, Data or Deep Learning — craftsmanship will always matter
+- While the guilds of tomorrow may be Frontend or Contracts, Growth or Community, Data or Deep Learning — craftsmanship will always matter
 
 ### A Sibiu Guild Tower
 ![a Sibiu guild tower, in the citadel wall](./media/GUILDTOWER-small.jpg)
