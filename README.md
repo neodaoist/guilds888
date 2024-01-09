@@ -39,14 +39,14 @@ Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
 - The total piece is 8 movements, ~12 min long, for flute, bassoon, violin, viola, and mixed percussion
 - For full score and/or parts, contact [@neodaoist](https://twitter.com/neodaoist)
 - Listen to the music of Guilds! Which is your favorite movement?
-  1. [GOLDSMITHS](https://opensea.io/assets/base/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/9)
-  2. [BLACKSMITHS](https://opensea.io/assets/base/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/50)
-  3. [EMBROIDERERS](https://opensea.io/assets/base/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/35)
-  4. [STONEMASONS](https://opensea.io/assets/base/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/4)
-  5. [GLASSBLOWERS](https://opensea.io/assets/base/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/21)
-  6. [COBBLERS](https://opensea.io/assets/base/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/30)
-  7. [CANDLEMAKERS](https://opensea.io/assets/base/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/47)
-  8. [ARROWFLETCHERS](https://opensea.io/assets/base/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/64)
+  - [GOLDSMITHS](https://opensea.io/assets/base/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/9)
+  - [BLACKSMITHS](https://opensea.io/assets/base/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/50)
+  - [EMBROIDERERS](https://opensea.io/assets/base/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/35)
+  - [STONEMASONS](https://opensea.io/assets/base/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/4)
+  - [GLASSBLOWERS](https://opensea.io/assets/base/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/21)
+  - [COBBLERS](https://opensea.io/assets/base/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/30)
+  - [CANDLEMAKERS](https://opensea.io/assets/base/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/47)
+  - [ARROWFLETCHERS](https://opensea.io/assets/base/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/64)
 - Music by Neodaoist
 
 ### Paper and Pencil Draft
