@@ -105,13 +105,12 @@ Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
 
 # The Code
 
-- The [initial CUBE contract](https://basescan.org/address/0x4db3ab8e606eadf3d94cf5349a35c415156b89b3?a=1#code) is an ERC721, created with Manifold Studio
+- The [initial CUBE contract](https://basescan.org/address/0x4db3ab8e606eadf3d94cf5349a35c415156b89b3?a=1#code) is an ERC721, created with Manifold Studio on Base
 - The [meltable GUILDS contract](https://basescan.org/address/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92#code) is an ERC1155, written with Foundry and Solmate
 - MELTABLE mechanism is bidirectional —
   - Singles can be MELTED into compounds
   - Compounds can be UNMELTED into singles
-- For more details, check out the [test suite](./test/Guilds.t.sol)
-- Code by Neodaoist
+- Code by Neodaoist; for more details, check out the [test suite](./test/Guilds.t.sol)
 
 ### The GUILDS ERC1155 NFT Contract
 ![contract screenshot](./media/CONTRACT.jpg)
