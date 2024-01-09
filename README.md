@@ -132,8 +132,8 @@ Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
 ## What's Next for GUILDS?
 
 - The Music — 🎻 Would love to re-record the expanded version, again with [ICon Arts Ensemble](https://iconartsfestival.com/)
+- The Art — ⏳ Could add a temporal dimension, where the art unfolds and evolves over time
 - The Code — ⛽️ Definitely some opportunities to gas golf and optimize the contract further
-- The Art — ⏳ Could add a time dimension, where the art unfolds and evolves over time
 - The Experience — 💻 Develop a frontend, because right now melting is done by interacting directly with the contract, eg using [BaseScan](https://basescan.org/), [op-viem](https://www.opviem.sh/), or [cast](https://book.getfoundry.sh/cast/)
 
 ---
