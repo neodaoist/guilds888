@@ -83,8 +83,8 @@ Don't just 🔥 BURN your music NFTs.. ❤️‍🔥 MELT them
 - There are 64 audio-emotional moments (8 guilds x 8 styles)
 - Each an edition of 8, for a total of 512 moments (8x8x8)
 - How can collectors MELT their common moment NFTs into rarer NFTs?
-  - A collector with all 8 style moments of a guild, can MELT into an [uncommon 1x8 GUILD moment strip](https://opensea.io/assets/base/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/73)
-  - A collector with all 8 guild moments of a style, can MELT into an [uncommon 8x1 STYLE moment strip](https://opensea.io/assets/base/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/66)
+  - A collector with all 8 style moments of a guild, can MELT into an [uncommon 1x8 GUILD moment strip](https://opensea.io/assets/base/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/66)
+  - A collector with all 8 guild moments of a style, can MELT into an [uncommon 8x1 STYLE moment strip](https://opensea.io/assets/base/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/73)
   - A collector with all 64 audio-emotional moments, can MELT into a [rare 8x8 MOSAIC moment sheet](https://opensea.io/assets/base/0xe09cd75b2e3a874f08fb8d09a98bdea307a1ff92/81)
   - A collector with all 512 audio-emotional moments, can MELT into the [1/1 ultrarare 8x8x8 CUBE](https://gallery.manifold.xyz/base/0x4db3ab8e606eadf3d94cf5349a35c415156b89b3/1)
 - 2D art prompted by Neodaoist; 3D art modeled by digital collaborator (literally paid with OP airdrop earnings!)
